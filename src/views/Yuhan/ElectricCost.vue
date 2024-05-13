@@ -1,5 +1,5 @@
 <script>
-import Calculator from '../components/Yuhan/Calculator.vue'
+import calculator from './components/Yuhan/Calculator.vue'
 export default{
     data(){
         return{
@@ -9,6 +9,10 @@ export default{
 </script>
 
 <template>
+    <div>
+        <calculator />
+    </div>
+    
 </template>
 
 <style scoped lang="scss">
