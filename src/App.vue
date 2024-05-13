@@ -8,6 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
         <RouterLink to="/">分頁1</RouterLink>
         <RouterLink to="/">分頁2</RouterLink>
+        <RouterLink to="/oilInformation">oilInformation</RouterLink>
   </header>
 
   <RouterView />
