@@ -6,8 +6,9 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <h1>This is 首頁.</h1>
 
-        <RouterLink to="/">分頁1</RouterLink>
-        <RouterLink to="/">分頁2</RouterLink>
+        <RouterLink to="/ElectricCost">電價</RouterLink>
+
+
   </header>
 
   <RouterView />
