@@ -132,6 +132,8 @@ export default {
 </script>
 
 <template>
+  
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -139,6 +141,7 @@ export default {
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  
   <div class="bigArea">
     <!-- 油價顯示區 -->
     <div class="title">本週油價</div>
@@ -293,4 +296,12 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+
+    
+
+
+
+
+</style>
