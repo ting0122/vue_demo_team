@@ -125,9 +125,18 @@ export default{
             <h2>簡易電費試算器</h2>
             <span>省錢的電價模式，你選對了嗎</span>
         </div>
-        <div class="details">
+    <div class="details">
         <p>台電為反應尖峰、半尖峰、離峰不同時間的供電成本，訂定不同費率，尖峰時間電價最高，離峰時間最低，希望藉由調整用電時間，將尖峰用電移轉至離峰時間使用，以達充分利用離峰電力目的，同時也能節省電費支出。</p>
         <button><a href="https://service.taipower.com.tw/taipowerdsm/residential-and-commercial">了解更多</a></button>
+    </div>
+    <div class="animationArea">
+        <img class="cloud" src="./green-energy-cloud.png" alt="">
+        <img class="cloud2" src="./green-energy-cloud.png" alt="">
+        <img class="sun" src="./green-energy-sun.png" alt="">
+        <img class="wind" src="./wind.png" alt="">
+        <img class="windSlow" src="./wind.png" alt="">
+        <img class="rain" src="./rain.png" alt="">
+        <img class="rain delay" src="./rain.png" alt="">
     </div>
     <small>若用戶選擇改用時間電價，須先裝設智慧電表，裝設費用由台電負擔。用戶只要拿電費單和印章到各區處或服務所，即可申請改用時間電價，台電將派員赴現場換表，亦可先致電諮詢。</small>
     </div>
@@ -264,7 +273,7 @@ export default{
 .areaOne{
     width: 100%;
     height: 70dvh;
-    background-image: url("./green-energy.png");
+    background-image: url("./green-energy-final.png");
     background-position: center;
     background-size: cover;
     position: relative;
@@ -299,6 +308,88 @@ export default{
         position: absolute;
         bottom: 100px;
         left: 100px;
+    }
+    .animationArea{
+        position: relative;
+        transition: 1s linear;
+        .cloud{
+            position: absolute;
+            left:320px;
+            animation: cloudMove 10s linear infinite;
+        }
+        .cloud2{
+            position: absolute;
+            right:380px;
+            top: 130px;
+            animation: cloudMove 10s linear infinite;
+        }
+        .sun{
+            scale:1.1;
+            position: absolute;
+            right: 69px;
+            top: 105px;
+            animation: sunshine 10s linear infinite;
+        }
+        .wind{
+            position: absolute;
+            right: 115px;
+            top: 183px;
+            scale: 1.1;
+            animation: windMove 15s linear infinite;
+        }
+        .windSlow{
+            position: absolute;
+            right: 75px;
+            top: 220px;
+            scale: 0.9;
+            animation: windMove 19s linear infinite;
+        }
+        .rain{
+            position: absolute;
+            top: 135px;
+            left: 50px;
+            animation: rainning 4s linear infinite;
+        }
+        .delay{
+            animation-delay: 2s;
+            
+        }
+    }
+}
+@keyframes cloudMove{
+    50%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes sunshine{
+    25%{
+        scale: 1.25;
+    }
+    50%{
+        scale:1;
+    }
+    75%{
+        scale: 1.25;
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+}
+@keyframes windMove{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes rainning{
+    75%{
+        opacity: 1;
+    }
+    100%{
+        transform: translate(30px,35px);
+        opacity: 0;
     }
 }
 .areaTwo{
