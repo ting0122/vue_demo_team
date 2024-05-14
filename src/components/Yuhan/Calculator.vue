@@ -125,15 +125,18 @@ export default{
             <h2>簡易電費試算器</h2>
             <span>省錢的電價模式，你選對了嗎</span>
         </div>
-        <p class="details">台電為反應尖峰、半尖峰、離峰不同時間的供電成本，訂定不同費率，尖峰時間電價最高，離峰時間最低，希望藉由調整用電時間，將尖峰用電移轉至離峰時間使用，以達充分利用離峰電力目的，同時也能節省電費支出。</p>
+        <div class="details">
+        <p>台電為反應尖峰、半尖峰、離峰不同時間的供電成本，訂定不同費率，尖峰時間電價最高，離峰時間最低，希望藉由調整用電時間，將尖峰用電移轉至離峰時間使用，以達充分利用離峰電力目的，同時也能節省電費支出。</p>
         <button><a href="https://service.taipower.com.tw/taipowerdsm/residential-and-commercial">了解更多</a></button>
+    </div>
+    <small>若用戶選擇改用時間電價，須先裝設智慧電表，裝設費用由台電負擔。用戶只要拿電費單和印章到各區處或服務所，即可申請改用時間電價，台電將派員赴現場換表，亦可先致電諮詢。</small>
     </div>
     <div class="areaTwo">
         <!-- 二段時間電價區域 -->
-        <div class="title">
-            <h2>二段式時間電價<br>毎期電費計算</h2>
-        </div>
-        <div class="calculator">
+        <div class="calculator divleft">
+            <div class="title left">
+                <h2>二段式時間電價<br>毎期電費計算</h2>
+            </div>
             <p class="note">1.毎戶毎月基本電費75元<br>
             2.用電度數可於電費帳單中取得
             也可上<a href="https://service.taipower.com.tw/ebpps2/">電子帳單服務系統</a>查詢，或<a href="https://www.taipower.com.tw/tc/page.aspx?mid=1427">下載台灣電力App</a><br>
@@ -215,10 +218,10 @@ export default{
         </div>
             
         <!-- 累進電量區域 -->
-        <div class="title">
-            <h2>累進電量<br>毎期電費試算</h2>
-        </div>
-        <div class="calculator backgroundDark">
+        <div class="calculator backgroundDark divright">
+            <div class="title right">
+                <h2>累進電量<br>毎期電費試算</h2>
+            </div>
             <p class="note">1.僅提供給表燈非營業用戶(家用)<br>
             2.概算電費金額僅供參考，實際電費金額需配合用電情形計算。<br>
             3.<a href="https://www.taipower.com.tw/tc/page.aspx?mid=238">電價表查詢</a></p>
@@ -257,18 +260,52 @@ export default{
     box-sizing: border-box;
     font-family: 'Zen Maru Gothic';
 }
+
 .areaOne{
     width: 100%;
-    height: 50dvh;
-    background-image: url();
+    height: 70dvh;
+    background-image: url("./green-energy.png");
+    background-position: center;
+    background-size: cover;
+    position: relative;
     .details{
         width: 30%;
         padding: 2%;
+        position: absolute;
+        left: 180px;
+        top: 140px;
         background: #fff;
-        opacity: 0.9;
+        opacity: 0.85;
         border-radius: 20px;
         box-shadow: 2px 2px 2px gray;
     }
+    button{
+        margin-top: 5px;
+        padding: 1%;
+        box-shadow: 1px 1px 2px gray;
+        border:none;
+        background: #D8FB5A;
+        border-radius: 5px;
+        &:hover{
+            scale: 1.05;
+        }
+        a{
+            color: #2F5954;
+            text-decoration: none;
+        }
+    }
+    small{
+        width: 50%;
+        position: absolute;
+        bottom: 100px;
+        left: 100px;
+    }
+}
+.areaTwo{
+    width: 100%;
+    height: 120dvh;
+    display: flex;
+    justify-content: space-evenly;
 }
 .title{
     width: 215px;
@@ -277,19 +314,40 @@ export default{
     color: white;
     text-align: center;
     padding-top: 25px;
-    border-radius: 50px;
+    border-radius: 45px;
     box-shadow: 5px 5px 5px grey;
+    z-index: 1;
+}
+.left{
+    position: absolute;
+    left: 20px;
+    top: -60px;
+}
+.right{
+    position: absolute;
+    top: -60px;
+    right: 350px;
 }
 .large{
+    position: absolute;
+    left: 100px;
+    top: 15px;
     width: 250px;
     height: 100px;
     padding-top: 20px;
+    border-radius: 40px;
     span{
         color: #D8FB5A;
         font-size: 14px;
     }
 }
+
+.divleft{
+    position: absolute;
+    top: 120px;
+}
 .calculator{
+    scale: 0.95;
     width: 600px;
     height: 900px;
     border: 2px solid #2F5954;
@@ -330,9 +388,9 @@ export default{
                 color:#fff;
             }
             &:checked{
-                background: #2F5954}
-                
+                background: #2F5954
             }
+        }
             .checked{
             transition: box-shadow .3s ease-in;
             
@@ -490,6 +548,7 @@ export default{
     }
 }
 .backgroundDark{
+    height: 850px;
     background: #C9D9CD;
     display: flex;
     justify-content: center;

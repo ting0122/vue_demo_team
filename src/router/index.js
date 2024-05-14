@@ -7,7 +7,12 @@ const router = createRouter({
     {
       path: '/ElectricCost',
       name: 'ElectricCost',
-      component: () => import('../views/Yuhan/ElectricCost.vue')
+      component: () => import('../views/ElectricCost.vue')
+    },
+    {
+      path: '/calculator',
+      name: 'calculator',
+      component: () => import('../components/Yuhan/Calculator.vue')
     }
   ]
 })

@@ -4,9 +4,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <h1>This is 首頁.</h1>
 
-        <RouterLink to="/ElectricCost">電價</RouterLink>
+  <RouterLink to="/ElectricCost">電價</RouterLink>
 
 
   </header>
