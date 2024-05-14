@@ -7,8 +7,8 @@ export default {
         return {
             oilItemName: '油 價 動 態',
             eleItemName: '電 價 浮 動',
-            staItemName: '充 電 站 資 訊',
-            gasItemName: '桶 裝 瓦 斯 價 格',
+            staItemName: '充電站資訊',
+            gasItemName: '桶裝瓦斯價格',
             imageOil: './src/components/巧/巧gas.png',
             imageEle: './src/components/巧/巧lighticon.png',
             imageSta: './src/components/巧/巧battery.png',
@@ -297,5 +297,6 @@ export default {
 .bgstaImg{
     width: 40px;
     height: 6dvh;
+    margin-left: 5px
 }
 </style>
