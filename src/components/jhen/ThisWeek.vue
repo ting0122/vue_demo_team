@@ -132,7 +132,7 @@ export default {
 </script>
 
 <template>
-  
+  <link rel="stylesheet" href="./src/components/jhen/_jhen.scss">
 
   <link
     rel="stylesheet"
