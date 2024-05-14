@@ -130,13 +130,13 @@ export default{
         <button><a href="https://service.taipower.com.tw/taipowerdsm/residential-and-commercial">了解更多</a></button>
     </div>
     <div class="animationArea">
-        <img class="cloud" src="./green-energy-cloud.png" alt="">
-        <img class="cloud2" src="./green-energy-cloud.png" alt="">
-        <img class="sun" src="./green-energy-sun.png" alt="">
-        <img class="wind" src="./wind.png" alt="">
-        <img class="windSlow" src="./wind.png" alt="">
-        <img class="rain" src="./rain.png" alt="">
-        <img class="rain delay" src="./rain.png" alt="">
+        <img class="cloud" src="./imgs/green-energy-cloud.png" alt="">
+        <img class="cloud2" src="./imgs/green-energy-cloud.png" alt="">
+        <img class="sun" src="./imgs/green-energy-sun.png" alt="">
+        <img class="wind" src="./imgs/wind.png" alt="">
+        <img class="windSlow" src="./imgs/wind.png" alt="">
+        <img class="rain" src="./imgs/rain.png" alt="">
+        <img class="rain delay" src="./imgs/rain.png" alt="">
     </div>
     <small>若用戶選擇改用時間電價，須先裝設智慧電表，裝設費用由台電負擔。用戶只要拿電費單和印章到各區處或服務所，即可申請改用時間電價，台電將派員赴現場換表，亦可先致電諮詢。</small>
     </div>
