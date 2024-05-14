@@ -13,7 +13,7 @@ export default{
 
 <template>
     <div class="headerArea">
-        <RouterLink class="routerItem" to="/">首頁</RouterLink>
+        <RouterLink class="routerItem" to="/"></RouterLink>
         <RouterLink class="routerItem" to="/Taipei"> 臺北市</RouterLink>
         <RouterLink class="routerItem" to="/Jilong"> 基隆市</RouterLink>
         <RouterLink class="routerItem" to="/NewTaipei"> 新北市</RouterLink>
