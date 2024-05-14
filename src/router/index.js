@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
+<<<<<<< HEAD
 // import HomeView from '../views/HomeView.vue'
+=======
+
+>>>>>>> Yuhan
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,9 +22,20 @@ const router = createRouter({
     //   component: () => import('../views/AboutView.vue')
     // },
     {
+<<<<<<< HEAD
       path:'/oilInformation',
       name:'oilInformation',
       component: () => import('../views/oilInformation.vue')
+=======
+      path: '/ElectricCost',
+      name: 'ElectricCost',
+      component: () => import('../views/ElectricCost.vue')
+    },
+    {
+      path: '/calculator',
+      name: 'calculator',
+      component: () => import('../components/Yuhan/Calculator.vue')
+>>>>>>> Yuhan
     }
   ]
 })
