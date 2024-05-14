@@ -198,19 +198,19 @@ export default{
                     <span class="peakDisplay isShort"></span>
                     <div class="peakDisplay isShort"></div>
                     <div class="icon">
-                        <span>平日<img src="./day-icon.svg" alt="">06:00</span>
-                        <span><img src="./day-icon.svg" alt="">11:00</span>
-                        <span><img src="./day-icon.svg" alt="">14:00</span>
-                        <span><img src="./night-icon.svg" alt="" class="night">24:00</span>
+                        <span>平日<img src="./imgs/day-icon.svg" alt="">06:00</span>
+                        <span><img src="./imgs/day-icon.svg" alt="">11:00</span>
+                        <span><img src="./imgs/day-icon.svg" alt="">14:00</span>
+                        <span><img src="./imgs/night-icon.svg" alt="" class="night">24:00</span>
                     </div>
                     <h3>離峰時段</h3>
                     <div class="peakDisplay isGreen isShort"></div>
                     <div class="peakDisplay isGreen isShort"></div>
                     <div class="icon">
-                        <span>平日<img src="./night-icon.svg" alt="">00:00</span>
-                        <span><img src="./day-icon.svg" alt="">06:00</span>
-                        <span><img src="./day-icon.svg" alt="">11:00</span>
-                        <span><img src="./day-icon.svg" alt="">14:00</span>
+                        <span>平日<img src="./imgs/night-icon.svg" alt="">00:00</span>
+                        <span><img src="./imgs/day-icon.svg" alt="">06:00</span>
+                        <span><img src="./imgs/day-icon.svg" alt="">11:00</span>
+                        <span><img src="./imgs/day-icon.svg" alt="">14:00</span>
                     </div>
                     <div class="peakDisplay isGreen "></div>
                         <p>六日00:00-24:00</p>
@@ -273,7 +273,7 @@ export default{
 .areaOne{
     width: 100%;
     height: 70dvh;
-    background-image: url("./green-energy-final.png");
+    background-image: url("./imgs/green-energy-final.png");
     background-position: center;
     background-size: cover;
     position: relative;
@@ -315,38 +315,38 @@ export default{
         .cloud{
             position: absolute;
             left:320px;
-            animation: cloudMove 10s linear infinite;
+            animation: cloudMove 20s linear infinite;
         }
         .cloud2{
             position: absolute;
-            right:380px;
+            right:450px;
             top: 130px;
-            animation: cloudMove 10s linear infinite;
+            animation-delay: 5s;
+            animation: cloudMove 20s linear infinite;
         }
         .sun{
             scale:1.1;
             position: absolute;
-            right: 69px;
-            top: 105px;
+            right: 80px;
+            top: 93px;
             animation: sunshine 10s linear infinite;
         }
         .wind{
             position: absolute;
-            right: 115px;
-            top: 183px;
+            right: 133px;
+            top: 185px;
             scale: 1.1;
-            animation: windMove 15s linear infinite;
+            animation: windMove 13s linear infinite;
         }
         .windSlow{
             position: absolute;
-            right: 75px;
+            right: 86px;
             top: 220px;
-            scale: 0.9;
             animation: windMove 19s linear infinite;
         }
         .rain{
             position: absolute;
-            top: 135px;
+            top: 128px;
             left: 50px;
             animation: rainning 4s linear infinite;
         }
@@ -358,7 +358,7 @@ export default{
 }
 @keyframes cloudMove{
     50%{
-        transform: translateX(10px);
+        transform: translateX(20px);
     }
     100%{
         transform: translateX(0);
