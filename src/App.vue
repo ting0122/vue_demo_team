@@ -1,23 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import TaiwanChargeMap from './views/TaiwanChargeMap.vue'
+// import Animation from './views/animation.vue';
 </script>
 
 <template>
-  <header>
-    <h1>This is 首頁.</h1>
-
-        <RouterLink to="/">分頁1</RouterLink>
-        <RouterLink to="/">分頁2</RouterLink>
-  </header>
+  <div class="header">
+      <TaiwanChargeMap />
+  </div>
 
   <RouterView />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
+<style scoped lang="scss">
 
 </style>
