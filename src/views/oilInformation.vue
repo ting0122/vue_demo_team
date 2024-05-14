@@ -5,7 +5,18 @@ import componentjhen from '../components/jhen/ThisWeek.vue';
 export default {
     data() {
         return {
-
+            oilItemName: '油 價 動 態',
+            eleItemName: '電 價 浮 動',
+            staItemName: '充 電 站 資 訊',
+            gasItemName: '桶 裝 瓦 斯 價 格',
+            imageOil: './src/components/巧/巧gas.png',
+            imageEle: './src/components/巧/巧lighticon.png',
+            imageSta: './src/components/巧/巧elemoto.png',
+            imageGas: './src/components/巧/巧gas-tank.png',
+            oilHovered: false,
+            eleHovered: false,
+            staHovered: false,
+            gasHovered: false,
         }
     },
     components: {
@@ -25,18 +36,29 @@ export default {
         <img src="../components/巧/巧moto.png" class="moto">
         <div class="lightgreen">
             <div class="space"></div>
-            <div class="itemIcon elecIcon">
-                <h2><a href="#">電 費 計 算</a></h2>
+            <div class="itemIcon" id="elecIcon" @mouseenter="oilHovered = true" @mouseleave="oilHovered = false">
+                <div class="eleText" :class="{ 'flipped': oilHovered }">
+                    <h2><a href="#">{{ eleItemName }}</a></h2>
+                    <img :src="imageEle" class="bgeleImg">
+                </div>
             </div>
-            <div class="itemIcon" id="oilcon">
-                <img src="../components/巧/巧gas.png" style="width: 50px;height: 50px;">
-                <!-- <h2><a href="#">油 價 動 態</a></h2> -->
-            </div id=onhoveroil>
-            <div class="itemIcon chargingStationIcon">
-                <h2><a href="#">充 電 站</a></h2>
+            <div class="itemIcon" id="oilIcon" @mouseenter="eleHovered = true" @mouseleave="eleHovered = false">
+                <div class="oilText" :class="{ 'flipped': eleHovered }">
+                    <h2><a href="#">{{ oilItemName }}</a></h2>
+                    <img :src="imageOil" class="bgoilImg">
+                </div>
             </div>
-            <div class="itemIcon gasIcon">
-                <h2><a href="#">桶 裝 瓦 斯</a></h2>
+            <div class="itemIcon" id="staIcon" @mouseenter="staHovered = true" @mouseleave="staHovered = false">
+                <div class="staText" :class="{ 'flipped': staHovered }">
+                    <h2><a href="#">{{ staItemName }}</a></h2>
+                    <img :src="imageSta" class="bgstaImg">
+                </div>
+            </div>
+            <div class="itemIcon" id="gasIcon" @mouseenter="gasHovered = true" @mouseleave="gasHovered = false">
+                <div class="gasText" :class="{ 'flipped': gasHovered }">
+                    <h2><a href="#">{{ gasItemName }}</a></h2>
+                    <img :src="imageGas" class="bggasImg">
+                </div>
             </div>
 
 
@@ -234,5 +256,41 @@ export default {
         transform: translate3d(1500px, 0, 0);
     }
 
+}
+
+#oilIcon,
+#eleIcon,
+#staIcon,
+#gasIcon {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+}
+
+.oilText,
+.eleText,
+.staText,
+.gasText {
+    position: absolute;
+    display: flex;
+    width: 220px;
+    transform: scale(1, 1);
+    color: white;
+    text-align: center;
+    line-height: 6dvh;
+    transition: transform 0.5s ease;
+    justify-content: center;
+}
+
+.flipped {
+    transform: scale(1.2, 1.2);
+}
+
+.bgoilImg,
+.bgeleImg,
+.bgstaImg,
+.bggasImg {
+    width: 50px;
+    height: 6dvh;
 }
 </style>

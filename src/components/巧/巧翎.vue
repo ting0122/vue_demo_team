@@ -3,7 +3,7 @@
 export default {
     data() {
         return {
-            oilItemName: "油 價 動 態",
+            
         }
     },
     methods: {
