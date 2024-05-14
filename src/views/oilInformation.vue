@@ -11,7 +11,7 @@ export default {
             gasItemName: '桶 裝 瓦 斯 價 格',
             imageOil: './src/components/巧/巧gas.png',
             imageEle: './src/components/巧/巧lighticon.png',
-            imageSta: './src/components/巧/巧elemoto.png',
+            imageSta: './src/components/巧/巧battery.png',
             imageGas: './src/components/巧/巧gas-tank.png',
             oilHovered: false,
             eleHovered: false,
@@ -288,9 +288,14 @@ export default {
 
 .bgoilImg,
 .bgeleImg,
-.bgstaImg,
+
 .bggasImg {
     width: 50px;
+    height: 6dvh;
+}
+
+.bgstaImg{
+    width: 40px;
     height: 6dvh;
 }
 </style>
