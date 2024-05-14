@@ -1,9 +1,8 @@
 <script>
-import calculator from './components/Yuhan/Calculator.vue'
+import calculator from '../components/Yuhan/Calculator.vue'
 export default{
-    data(){
-        return{
-        }
+    components:{
+        calculator,
     }
 }
 </script>
