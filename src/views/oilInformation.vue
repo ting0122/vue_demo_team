@@ -38,25 +38,25 @@ export default {
             <div class="space"></div>
             <div class="itemIcon" id="elecIcon" @mouseenter="oilHovered = true" @mouseleave="oilHovered = false">
                 <div class="eleText" :class="{ 'flipped': oilHovered }">
-                    <h2><a href="#">{{ eleItemName }}</a></h2>
+                    <h3><a href="#">{{ eleItemName }}</a></h3>
                     <img :src="imageEle" class="bgeleImg">
                 </div>
             </div>
             <div class="itemIcon" id="oilIcon" @mouseenter="eleHovered = true" @mouseleave="eleHovered = false">
                 <div class="oilText" :class="{ 'flipped': eleHovered }">
-                    <h2><a href="#">{{ oilItemName }}</a></h2>
+                    <h3><a href="#">{{ oilItemName }}</a></h3>
                     <img :src="imageOil" class="bgoilImg">
                 </div>
             </div>
             <div class="itemIcon" id="staIcon" @mouseenter="staHovered = true" @mouseleave="staHovered = false">
                 <div class="staText" :class="{ 'flipped': staHovered }">
-                    <h2><a href="#">{{ staItemName }}</a></h2>
+                    <h3><a href="#">{{ staItemName }}</a></h3>
                     <img :src="imageSta" class="bgstaImg">
                 </div>
             </div>
             <div class="itemIcon" id="gasIcon" @mouseenter="gasHovered = true" @mouseleave="gasHovered = false">
                 <div class="gasText" :class="{ 'flipped': gasHovered }">
-                    <h2><a href="#">{{ gasItemName }}</a></h2>
+                    <h3><a href="#">{{ gasItemName }}</a></h3>
                     <img :src="imageGas" class="bggasImg">
                 </div>
             </div>
