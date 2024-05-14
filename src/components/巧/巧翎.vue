@@ -16,7 +16,7 @@ export default {
 
 // 資料匯入產生新陣列
 let arr = []
-fetch("./巧匯入檔.json")
+fetch("./src/components/巧/巧匯入檔.json")
     .then(res => res.json())
     .then(data => {
         console.log(data)
