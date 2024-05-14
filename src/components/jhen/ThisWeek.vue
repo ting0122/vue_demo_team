@@ -35,7 +35,7 @@ export default {
   methods: {
     // 抓取 api 資料的方法
     fetchFuelOptions() {
-      fetch("./result (2).json")
+      fetch("./src/components/jhen/result (2).json")
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
