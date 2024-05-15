@@ -95,6 +95,7 @@ export default {
                     <canvas id="myChart" @mouseenter="this.change1()"></canvas>
                 </div>
             </div>
+            <div class="footer"></div>
         </div>
     </div>
 
@@ -210,6 +211,7 @@ export default {
         margin: 0 auto;
         padding: 3% 3%;
         position: relative;
+        z-index: 1;
 
         h2 {
             color: #294744;
@@ -236,16 +238,22 @@ export default {
                 border: 3pt solid #CCEC60;
                 padding: 20px 15px;
                 border-radius: 10px;
+                z-index: 3;
+                position: relative;
             }
-
-            
-        }
-
-        .test{
-            width: 20dvw;
-            height: 20dvh;
-        }
     }
+    .footer{
+                width: 100%;
+                height: 36dvh;
+                background-color: #294744;
+                position: absolute;
+                bottom: 0%;
+                z-index: 2;
+                bottom: 0%;
+                left: 0%;
+
+            }
+        }
 }
 
 @keyframes goRun {
