@@ -664,7 +664,7 @@ export default{
     }
     button{
         position: absolute;
-        bottom: 200px;
+        bottom: 170px;
         left: 150px;
     }
     .cost{
