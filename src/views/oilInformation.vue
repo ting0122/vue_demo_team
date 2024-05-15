@@ -38,13 +38,13 @@ export default {
             <div class="space"></div>
             <div class="itemIcon" id="elecIcon" @mouseenter="oilHovered = true" @mouseleave="oilHovered = false">
                 <div class="eleText" :class="{ 'flipped': oilHovered }">
-                    <h3><a href="#">{{ eleItemName }}</a></h3>
+                    <h3><a href="/ElectricCost">{{ eleItemName }}</a></h3>
                     <img :src="imageEle" class="bgeleImg">
                 </div>
             </div>
             <div class="itemIcon" id="oilIcon" @mouseenter="eleHovered = true" @mouseleave="eleHovered = false">
                 <div class="oilText" :class="{ 'flipped': eleHovered }">
-                    <h3><a href="#">{{ oilItemName }}</a></h3>
+                    <h3><a href="/oilInformation">{{ oilItemName }}</a></h3>
                     <img :src="imageOil" class="bgoilImg">
                 </div>
             </div>
