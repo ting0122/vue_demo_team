@@ -29,7 +29,15 @@ body {
   display: flex;
   margin-top: 1%;
 }
-
+.calcTitle {
+  text-align: left;
+  font-size: 2em;
+  color: #294744;
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  margin-top: 20px;
+  display: flex;
+}
 .fuel {
   width: 38%;
   height: 25dvh;
@@ -82,8 +90,8 @@ body {
 // 中間小插圖
 .calcIntro {
   width: 133.5%;
-  height: 65dvh;
-  border: 1px solid black;
+  height: 56dvh;
+  // border: 1px solid black;
   margin-left: -16.7%;
   position: relative;
   img.gasStation {
@@ -96,19 +104,28 @@ body {
   .whiteLine1 {
     width: 7%;
     height: 3%;
-    background-color: white;
+    background-color: #f8eeda;
     position: absolute;
-    bottom: 14%;
+    bottom: 16%;
     right: 2%;
     z-index: 1;
   }
   .whiteLine2 {
     width: 8%;
     height: 3%;
-    background-color: white;
+    background-color: #f8eeda;
     position: absolute;
-    bottom: 14%;
-    right: 22%;
+    bottom: 16%;
+    right: 25%;
+    z-index: 1;
+  }
+  .whiteLine3 {
+    width: 8%;
+    height: 3%;
+    background-color: #f8eeda;
+    position: absolute;
+    bottom: 16%;
+    right: 48%;
     z-index: 1;
   }
   .road {
@@ -116,7 +133,7 @@ body {
     height: 32%;
     position: absolute;
     bottom: 0px;
-    background-color: rgb(148, 145, 145);
+    background-color: rgb(172 168 168);
   }
   img.car1 {
     width: 14%;
@@ -132,28 +149,17 @@ body {
     right: 33%;
     z-index: 1;
   }
-  .calcTitle {
-    position: absolute;
-    top: 1%;
-    right: 36%;
-    text-align: left;
-    font-size: 2em;
-    color: #294744;
-    font-family: "Zen Maru Gothic", serif;
-    font-weight: 500;
-    margin-top: 20px;
-    display: flex;
-  }
+ 
   .introText {
     position: absolute;
-    width: 36%;
-    height: 36%;
-    top: 26%;
-    right: 13%;
+    width: 38%;
+    height: 42%;
+    top: 7%;
+    right: 9%;
     background-color: #ddece1;
     border-radius: 25px;
     text-align: left;
-    padding-left: 25px;
+    padding-left: 36px;
     padding-top: 8px;
     line-height: 28px;
   }
