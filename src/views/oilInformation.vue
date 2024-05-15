@@ -9,9 +9,9 @@ export default {
             eleItemName: '電 價 浮 動',
             staItemName: '充電站資訊',
             gasItemName: '桶裝瓦斯價格',
-            imageOil: './src/components/巧/巧gas.png',
-            imageEle: './src/components/巧/巧lighticon.png',
-            imageSta: './src/components/巧/巧battery.png',
+            imageOil: './src/components/巧/巧gas1.png',
+            imageEle: './src/components/巧/巧lighticon3.png',
+            imageSta: './src/components/巧/巧battery綠.png',
             imageGas: './src/components/巧/巧gas-tank.png',
             oilHovered: false,
             eleHovered: false,
@@ -249,7 +249,7 @@ export default {
     }
 
     50% {
-        transform: translate3d(675px, 0, 0);
+        transform: translate3d(725px, 0, 0);
     }
 
     100% {

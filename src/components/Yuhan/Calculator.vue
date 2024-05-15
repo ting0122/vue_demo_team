@@ -144,7 +144,7 @@ export default{
         <!-- 二段時間電價區域 -->
         <div class="calculator divleft">
             <div class="title left">
-                <h2>二段式時間電價<br>毎期電費計算</h2>
+                <h2>二段式時間電價<br>毎期電費試算</h2>
             </div>
             <p class="note">1.毎戶毎月基本電費75元<br>
             2.用電度數可於電費帳單中取得
@@ -226,10 +226,10 @@ export default{
             </div>
         </div>
             
-        <!-- 累進電量區域 -->
+        <!-- 累進電價區域 -->
         <div class="calculator backgroundDark divright">
             <div class="title right">
-                <h2>累進電量<br>毎期電費試算</h2>
+                <h2>累進電價<br>毎期電費試算</h2>
             </div>
             <p class="note">1.僅提供給表燈非營業用戶(家用)<br>
             2.概算電費金額僅供參考，實際電費金額需配合用電情形計算。<br>
@@ -250,7 +250,7 @@ export default{
             <span>度</span>
             </div>
             <div class="rateChart">
-                <img src="./notTimeRate.png" alt=""><p>1.用戶因 2 個月抄表、收費一次，計費時各段度數係加倍計算。 <br>
+                <img src="./imgs/notTimeRate.png" alt=""><p>1.用戶因 2 個月抄表、收費一次，計費時各段度數係加倍計算。 <br>
                 2.依電業法第 52 條所稱使用維生輔具之身障家庭，其用電依住宅用電價計費者，超過 1000 度以上部分，按 701~1000 度部分單價計費。 </p>
             </div>
             <div class="nTsummer">
@@ -263,6 +263,7 @@ export default{
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -276,17 +277,19 @@ export default{
     background-image: url("./imgs/green-energy-final.png");
     background-position: center;
     background-size: cover;
+    overflow: hidden;
     position: relative;
     .details{
         width: 30%;
         padding: 2%;
         position: absolute;
-        left: 180px;
+        left: 220px;
         top: 140px;
         background: #fff;
         opacity: 0.85;
         border-radius: 20px;
         box-shadow: 2px 2px 2px gray;
+        font-weight: 500;
     }
     button{
         margin-top: 5px;
@@ -319,7 +322,7 @@ export default{
         }
         .cloud2{
             position: absolute;
-            right:450px;
+            right:40%;
             top: 130px;
             animation-delay: 5s;
             animation: cloudMove 20s linear infinite;
@@ -327,27 +330,27 @@ export default{
         .sun{
             scale:1.1;
             position: absolute;
-            right: 80px;
-            top: 93px;
+            right: 6%;
+            top: 95px;
             animation: sunshine 10s linear infinite;
         }
         .wind{
             position: absolute;
-            right: 133px;
+            right: 9.9%;
             top: 185px;
             scale: 1.1;
             animation: windMove 13s linear infinite;
         }
         .windSlow{
             position: absolute;
-            right: 86px;
+            right: 6.6%;
             top: 220px;
             animation: windMove 19s linear infinite;
         }
         .rain{
             position: absolute;
             top: 128px;
-            left: 50px;
+            left: 5.5%;
             animation: rainning 4s linear infinite;
         }
         .delay{
@@ -394,7 +397,7 @@ export default{
 }
 .areaTwo{
     width: 100%;
-    height: 120dvh;
+    height: 150dvh;
     display: flex;
     justify-content: space-evenly;
 }
@@ -447,10 +450,12 @@ export default{
     display: flex;
     justify-content: center;
     padding: 20px;
+    background: #fff;
     .note{
         width: 300px;
         height: 60px;
         font-size: 12px;
+        font-weight: 500;
         position: absolute;
         right:15px;
         top: 30px;
@@ -600,6 +605,7 @@ export default{
             bottom: -60px;
             left: 120px;
             font-size: 20px;
+            font-weight: 500;
         }
         .twd{
             position: absolute;
@@ -611,13 +617,13 @@ export default{
     }
     .calculate{
         width: 300px;
-        height: 40px;
+        height: 50px;
         border-radius: 50px;
         margin: 30px 0;
         background: #48725C;
         color:#fff;
         cursor: pointer;
-        border: 2px solid #2F5954;
+        // border: 2px solid #2F5954;
         transition: background-color .2s ease-in;
         font-size: 20px;
         letter-spacing: 10px;
@@ -666,6 +672,7 @@ export default{
             bottom: 120px;
             left: 120px;
             font-size: 20px;
+            font-weight: 500;
         }
         .twd{
             position: absolute;
