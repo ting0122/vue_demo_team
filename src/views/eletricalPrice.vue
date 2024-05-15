@@ -39,7 +39,7 @@
                         left: 'center',
                         textStyle: {
                             fontFamily:'Zen Maru Gothic',
-                            fontSize:24,
+                            fontSize:30,
                         }
                     },
                     tooltip: {
@@ -53,6 +53,10 @@
                         itemHeihjt:15,
                         data: ['平均電價','售電量合計'],//添加新的數據系列名稱
                         left: 'right',
+                        textStyle:{
+                            fontSize:16,
+                            fontWeight:600
+                        }
                         
                     },
                     xAxis: {
@@ -60,12 +64,23 @@
                         type: 'category',
                         data: [],
                         axisLabel: {
-                            rotate: 45,
+                            rotate: 40,
+                            textStyle:{
+                            fontSize:14,
+                            fontWeight:500
+                        }
                         }
                     },
                     yAxis:[ {
                         type: 'value', //是數值型數據
-                        name: '度/元(新台幣)'
+                        name: '度/元(新台幣)',
+                        axisLabel: {
+                            textStyle:{
+                            fontSize:14,
+                            fontWeight:500
+                        }
+                        }
+                        
                     },
                     {
                         type:'value',
@@ -81,13 +96,17 @@
                         data: [],//從數據中獲取的每年平均電價數據存入這個陣列中
                         label: {
                             show: true,//數據標籤將顯示在圖表中
-                            position: 'top'//數據標籤將顯示在每個數據點的上
+                            position: 'top',//數據標籤將顯示在每個數據點的上
+                            textStyle:{
+                                fontSize:16,
+                            }
                         },
-                        color:"#2F5954",
+                        color:"#2F5954",//折線顏色
                         shadowColor:"#E8FFF5",
                         shadowBlur:8,
                         borderColor:"#CCEC60",
                         symbolSize:12,//改變折線圖節點大小
+
                     },
                 {
                     name:'售電量合計',
@@ -98,8 +117,8 @@
                     itemStyle: {
                         color: '#CCEC60', // 柱状图颜色
                         // 陰影效果
-                        shadowColor: '#31715C',
-                        shadowBlur: 5,
+                        // shadowColor: '#31715C',
+                        // shadowBlur: 5,
                         // 設置柱状圖邊框样式
                         borderColor: 'none',
                         borderWidth: 1,
@@ -163,7 +182,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');  
 .chart {
         height: 600px;
-        width: 80%;
+        width: 85%;
         text-align: center;
         margin:auto;
         
