@@ -209,6 +209,7 @@ export default {
         border-radius: 15px;
         margin: 0 auto;
         padding: 3% 3%;
+        position: relative;
 
         h2 {
             color: #294744;
@@ -237,7 +238,12 @@ export default {
                 border-radius: 10px;
             }
 
+            
+        }
 
+        .test{
+            width: 20dvw;
+            height: 20dvh;
         }
     }
 }
