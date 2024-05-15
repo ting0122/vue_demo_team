@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             oilItemName: '油 價 動 態',
-            eleItemName: '電 價 浮 動',
+            eleItemName: '電 價 幫 手',
             staItemName: '充電站資訊',
             gasItemName: '桶裝瓦斯價格',
             imageOil: './src/components/巧/巧gas1.png',
@@ -84,7 +84,7 @@ export default {
     </div>
     <div class="bgColor">
         <div class="content">
-            
+
             <componentjhen />
             <div class="countArea">
             </div>
@@ -181,9 +181,6 @@ export default {
                 margin: 2.5% 7%;
             }
         }
-
-
-
     }
 
     .greenArea {
@@ -212,11 +209,12 @@ export default {
         border-radius: 15px;
         margin: 0 auto;
         padding: 3% 3%;
+        position: relative;
 
         h2 {
             color: #294744;
         }
-      
+
         .bottom {
             width: 80%;
             margin: 0 auto;
@@ -239,6 +237,13 @@ export default {
                 padding: 20px 15px;
                 border-radius: 10px;
             }
+
+            
+        }
+
+        .test{
+            width: 20dvw;
+            height: 20dvh;
         }
     }
 }
@@ -287,16 +292,19 @@ export default {
 }
 
 .bgoilImg,
-.bgeleImg,
-
-.bggasImg {
+.bgeleImg {
     width: 50px;
     height: 6dvh;
 }
 
-.bgstaImg{
+.bggasImg {
     width: 40px;
     height: 6dvh;
-    margin-left: 5px
+}
+
+.bgstaImg {
+    width: 35px;
+    height: 6dvh;
+    margin-left: 7px
 }
 </style>
