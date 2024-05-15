@@ -64,9 +64,9 @@
                         type: 'category',
                         data: [],
                         axisLabel: {
-                            rotate: 40,
+                            rotate: 0, //文字角度
                             textStyle:{
-                            fontSize:14,
+                            fontSize:16,
                             fontWeight:500
                         }
                         }
@@ -76,8 +76,8 @@
                         name: '度/元(新台幣)',
                         axisLabel: {
                             textStyle:{
-                            fontSize:14,
-                            fontWeight:500
+                            fontSize:16,
+                            fontWeight:550
                         }
                         }
                         
@@ -87,6 +87,10 @@
                         name:'售電量合計(百億度)',//添加y軸單位
                         axisLabel:{
                             formatter:'{value}百億度',
+                            textStyle:{
+                                fontSize:16,
+                                fontWeight:600
+                            }
                             
                         },//設置y軸刻度標籤的格式
                     }],
@@ -124,10 +128,12 @@
                         borderWidth: 1,
                     label: {
                         show: true, // 顯示標籤
-                        position: 'inside', // 標籤位置（也可以是 'inside'、'insideTop' 等）
-                        color: '#ADFEDC', // 標籤字體颜色
-                        fontSize: 12, // 標籤字體大小
+                        position: 'insideBottom', // 標籤位置（也可以是 'inside'、'insideTop' 等）
+                        color: '#223838', // 標籤字體颜色
+                        textStyle:{
+                            fontSize: 12, // 標籤字體大小
                         fontWeight: 'bold', // 標籤字體粗细
+                        },            
                         formatter: 'salesVolume', // 標籤内容格式化，{c} 表示數據值
                         },
                     }
