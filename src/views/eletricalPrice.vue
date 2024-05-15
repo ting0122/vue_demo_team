@@ -118,7 +118,7 @@
         },
         methods: {
             fetchData() {
-                fetch("../10years (1).json")
+                fetch("./src/assets/10years (1).json")
                     .then(res => res.json())
                     .then(data => {
                         this.posts = data;
