@@ -178,8 +178,23 @@ export default {
       </div>
     </div>
 
+    
+    <div class="calcIntro">
+      <div class="calcTitle">油價 | 油量 試算器</div>
+      <div class="introText">想要計算每次加油大概需要多少錢？<br>
+想知道在一定預算下可以加幾公升的油？ <br>
+輸入欲計算的入油量或金額，並選擇符合您需求的油品， <br>
+按下確定即可得出您想要的結果。</div>
+                <img class="gasStation" src="./3-Photoroom.png-Photoroom.png" alt="">
+                <img class="car1" src="./1 (3)-Photoroom.png-Photoroom.png" alt="">
+                <img class="car2" src="./1 (3)-Photoroom.png-Photoroom.png" alt="">
+                <div class="whiteLine1"></div>
+                <div class="whiteLine2"></div>
+                <div class="road"></div>
+            </div>
+
     <!-- 油價小算盤 -->
-    <div class="calcTitle">油價 | 油量 試算器</div>
+    
     <div class="calc">
       <!-- 花費金額計算 -->
       <div class="calcSelect">

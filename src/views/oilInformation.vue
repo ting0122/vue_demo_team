@@ -84,9 +84,9 @@ export default {
     </div>
     <div class="bgColor">
         <div class="content">
+            
             <componentjhen />
             <div class="countArea">
-
             </div>
             <componentchiao />
             <div class="bottom">
@@ -216,7 +216,7 @@ export default {
         h2 {
             color: #294744;
         }
-
+      
         .bottom {
             width: 80%;
             margin: 0 auto;

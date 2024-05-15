@@ -79,16 +79,87 @@ body {
     letter-spacing: 1px;
   }
 }
-// 試算區
-.calcTitle {
-  text-align: left;
-  font-size: 2em;
-  color: #294744;
-  font-family: "Zen Maru Gothic", serif;
-  font-weight: 500;
-  margin-top: 20px;
-  display: flex;
+// 中間小插圖
+.calcIntro {
+  width: 133.5%;
+  height: 65dvh;
+  border: 1px solid black;
+  margin-left: -16.7%;
+  position: relative;
+  img.gasStation {
+    width: 39%;
+    position: absolute;
+    left: 2%;
+    bottom: 12%;
+    z-index: 1;
+  }
+  .whiteLine1 {
+    width: 7%;
+    height: 3%;
+    background-color: white;
+    position: absolute;
+    bottom: 14%;
+    right: 2%;
+    z-index: 1;
+  }
+  .whiteLine2 {
+    width: 8%;
+    height: 3%;
+    background-color: white;
+    position: absolute;
+    bottom: 14%;
+    right: 22%;
+    z-index: 1;
+  }
+  .road {
+    width: 100%;
+    height: 32%;
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(148, 145, 145);
+  }
+  img.car1 {
+    width: 14%;
+    position: absolute;
+    bottom: 6%;
+    right: 9%;
+    z-index: 1;
+  }
+  img.car2 {
+    width: 14%;
+    position: absolute;
+    bottom: 6%;
+    right: 33%;
+    z-index: 1;
+  }
+  .calcTitle {
+    position: absolute;
+    top: 1%;
+    right: 36%;
+    text-align: left;
+    font-size: 2em;
+    color: #294744;
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 500;
+    margin-top: 20px;
+    display: flex;
+  }
+  .introText {
+    position: absolute;
+    width: 36%;
+    height: 36%;
+    top: 26%;
+    right: 13%;
+    background-color: #ddece1;
+    border-radius: 25px;
+    text-align: left;
+    padding-left: 25px;
+    padding-top: 8px;
+    line-height: 28px;
+  }
 }
+// 試算區
+
 .calc {
   width: 96%;
   height: 75dvh;
@@ -135,8 +206,7 @@ body {
   // background-color: #80008045;
   border-radius: 5px;
   text-align: center;
-  background-color:#95139552;
-
+  background-color: #95139552;
 }
 
 .radio95 {
@@ -213,14 +283,11 @@ body {
   border-radius: 11px 11px 11px 11px;
   -webkit-appearance: none;
 
-
   &:checked + .oilItemText {
     background: #ccec60;
     scale: 1.1;
   }
 }
-
-
 
 .oilItemLabel {
   &:active {
