@@ -144,7 +144,7 @@ export default{
         <!-- 二段時間電價區域 -->
         <div class="calculator divleft">
             <div class="title left">
-                <h2>二段式時間電價<br>毎期電費計算</h2>
+                <h2>二段式時間電價<br>毎期電費試算</h2>
             </div>
             <p class="note">1.毎戶毎月基本電費75元<br>
             2.用電度數可於電費帳單中取得
@@ -226,10 +226,10 @@ export default{
             </div>
         </div>
             
-        <!-- 累進電量區域 -->
+        <!-- 累進電價區域 -->
         <div class="calculator backgroundDark divright">
             <div class="title right">
-                <h2>累進電量<br>毎期電費試算</h2>
+                <h2>累進電價<br>毎期電費試算</h2>
             </div>
             <p class="note">1.僅提供給表燈非營業用戶(家用)<br>
             2.概算電費金額僅供參考，實際電費金額需配合用電情形計算。<br>
@@ -289,6 +289,7 @@ export default{
         opacity: 0.85;
         border-radius: 20px;
         box-shadow: 2px 2px 2px gray;
+        font-weight: 500;
     }
     button{
         margin-top: 5px;
@@ -454,6 +455,7 @@ export default{
         width: 300px;
         height: 60px;
         font-size: 12px;
+        font-weight: 500;
         position: absolute;
         right:15px;
         top: 30px;
@@ -603,6 +605,7 @@ export default{
             bottom: -60px;
             left: 120px;
             font-size: 20px;
+            font-weight: 500;
         }
         .twd{
             position: absolute;
@@ -669,6 +672,7 @@ export default{
             bottom: 120px;
             left: 120px;
             font-size: 20px;
+            font-weight: 500;
         }
         .twd{
             position: absolute;
