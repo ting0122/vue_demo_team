@@ -397,6 +397,7 @@ export default{
     height: 120dvh;
     display: flex;
     justify-content: space-evenly;
+    background: #fff;
 }
 .title{
     width: 215px;
@@ -611,13 +612,13 @@ export default{
     }
     .calculate{
         width: 300px;
-        height: 40px;
+        height: 50px;
         border-radius: 50px;
         margin: 30px 0;
         background: #48725C;
         color:#fff;
         cursor: pointer;
-        border: 2px solid #2F5954;
+        // border: 2px solid #2F5954;
         transition: background-color .2s ease-in;
         font-size: 20px;
         letter-spacing: 10px;

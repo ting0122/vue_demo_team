@@ -5,8 +5,8 @@ import Header from './components/Header.vue'
 
 <template>
   <header>
+    <!-- <RouterLink to="/">分頁</RouterLink> -->
     <RouterLink to="/ElectricCost">ElectricCost</RouterLink>
-    <RouterLink to="/">分頁2</RouterLink>
     <RouterLink to="/oilInformation">oilInformation</RouterLink>
   </header>
 
@@ -14,11 +14,6 @@ import Header from './components/Header.vue'
 </template>
 
 <style scoped lang="scss">
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .header{
   width: 10dvw;
   height: 10dvh;
