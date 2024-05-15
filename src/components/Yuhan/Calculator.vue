@@ -119,6 +119,7 @@ export default{
     }
 </script>
 
+
 <template>
     <div class="areaOne">
         <div class="title large">
@@ -279,6 +280,9 @@ export default{
     background-size: cover;
     overflow: hidden;
     position: relative;
+    animation: fadeIn linear;
+    animation-timeline: view();
+    animation-range: -50px 400px;
     .details{
         width: 30%;
         padding: 2%;
@@ -395,11 +399,18 @@ export default{
         opacity: 0;
     }
 }
+@keyframes fadeIn{
+    from{scale: .85; opacity: 0;transform:translateX(-300px);}
+    to{scale: 1; opacity: 1;transform: translateX(0px)}
+}
 .areaTwo{
     width: 100%;
     height: 150dvh;
     display: flex;
     justify-content: space-evenly;
+    animation: fadeIn linear;
+    animation-timeline: view();
+    animation-range: -50px 350px;
 }
 .title{
     width: 215px;
@@ -444,7 +455,8 @@ export default{
     scale: 0.95;
     width: 600px;
     height: 900px;
-    border: 2px solid #2F5954;
+    // border: 2px solid #2F5954;
+    box-shadow: 0 0 5px #D8FB5A;
     border-radius: 50px;
     position: relative;
     display: flex;
