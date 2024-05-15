@@ -39,7 +39,7 @@
                         left: 'center',
                         textStyle: {
                             fontFamily:'Zen Maru Gothic',
-                            fontSize:30,
+                            fontSize:28,
                         }
                     },
                     tooltip: {
@@ -88,8 +88,8 @@
                         axisLabel:{
                             formatter:'{value}百億度',
                             textStyle:{
-                                fontSize:16,
-                                fontWeight:600
+                                fontSize:14,
+                                fontWeight:550
                             }
                             
                         },//設置y軸刻度標籤的格式
