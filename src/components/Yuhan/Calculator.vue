@@ -250,7 +250,7 @@ export default{
             <span>度</span>
             </div>
             <div class="rateChart">
-                <img src="./notTimeRate.png" alt=""><p>1.用戶因 2 個月抄表、收費一次，計費時各段度數係加倍計算。 <br>
+                <img src="./imgs/notTimeRate.png" alt=""><p>1.用戶因 2 個月抄表、收費一次，計費時各段度數係加倍計算。 <br>
                 2.依電業法第 52 條所稱使用維生輔具之身障家庭，其用電依住宅用電價計費者，超過 1000 度以上部分，按 701~1000 度部分單價計費。 </p>
             </div>
             <div class="nTsummer">
@@ -263,6 +263,7 @@ export default{
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -276,12 +277,13 @@ export default{
     background-image: url("./imgs/green-energy-final.png");
     background-position: center;
     background-size: cover;
+    overflow: hidden;
     position: relative;
     .details{
         width: 30%;
         padding: 2%;
         position: absolute;
-        left: 180px;
+        left: 220px;
         top: 140px;
         background: #fff;
         opacity: 0.85;
@@ -319,7 +321,7 @@ export default{
         }
         .cloud2{
             position: absolute;
-            right:450px;
+            right:40%;
             top: 130px;
             animation-delay: 5s;
             animation: cloudMove 20s linear infinite;
@@ -327,27 +329,27 @@ export default{
         .sun{
             scale:1.1;
             position: absolute;
-            right: 80px;
-            top: 93px;
+            right: 6%;
+            top: 95px;
             animation: sunshine 10s linear infinite;
         }
         .wind{
             position: absolute;
-            right: 133px;
+            right: 9.9%;
             top: 185px;
             scale: 1.1;
             animation: windMove 13s linear infinite;
         }
         .windSlow{
             position: absolute;
-            right: 86px;
+            right: 6.6%;
             top: 220px;
             animation: windMove 19s linear infinite;
         }
         .rain{
             position: absolute;
             top: 128px;
-            left: 50px;
+            left: 5.5%;
             animation: rainning 4s linear infinite;
         }
         .delay{
@@ -394,10 +396,9 @@ export default{
 }
 .areaTwo{
     width: 100%;
-    height: 120dvh;
+    height: 150dvh;
     display: flex;
     justify-content: space-evenly;
-    background: #fff;
 }
 .title{
     width: 215px;
@@ -448,6 +449,7 @@ export default{
     display: flex;
     justify-content: center;
     padding: 20px;
+    background: #fff;
     .note{
         width: 300px;
         height: 60px;

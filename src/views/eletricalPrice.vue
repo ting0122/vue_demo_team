@@ -37,6 +37,10 @@
                     title: {
                         text: '近十年電價變化趨勢及售電量合計',
                         left: 'center',
+                        textStyle: {
+                            fontFamily:'Zen Maru Gothic',
+                            fontSize:24,
+                        }
                     },
                     tooltip: {
                         trigger: 'axis',
@@ -148,19 +152,39 @@
 
 
 <template>
-    <div>
-        <button @click="fetchData()">電價變化點這裡看</button>
+    <div @mouseenter="fetchData()">
+        <!-- <button class="btn" @click="fetchData()">電價變化點這裡看</button> -->
         <!-- 將 Vue 實例中的 option 資料屬性綁定到了 <v-chart> 元件的 option 屬性上。這樣做可以將 Vue 實例中的圖表配置資料傳遞給 <v-chart> 元件，從而渲染出相應的圖表。 -->
         <v-chart class="chart" :option="option" ref="chart" />
     </div>
 </template>
 
 <style scoped>
-    .chart {
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');  
+.chart {
         height: 600px;
         width: 80%;
         text-align: center;
         margin:auto;
+        
+    }
+    /* .btn{
+    width: 130px;
+    height: 35px;
+    background-color:#2F5954 ;
+    color: white;
+    transition: 0.8s;
+    border: none;
+    box-shadow: 3px 3px 0px #C9D9CD;
+    border-radius: 10px;
+    font-family: 'Zen Maru Gothic';
+    &:hover{
+        transition: 0.3s;
+        background-color:#C09F6D ;
     }
 
+    &:active{
+        scale: 0.8;
+    }
+} */
 </style>
