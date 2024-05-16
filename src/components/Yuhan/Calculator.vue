@@ -256,6 +256,7 @@ export default{
                 <button type="submit" @click="notTimeTotal(notTimeDegree)" class="calculate">試算</button>
                 <span class="cost">本期電費約為</span><span class="twd">{{notT + '元'}}</span>
             </div>
+            <img class="bottom" src="./imgs/footerImg.png" alt="">
         </div>
     </div>
     <div class="footer"></div>
@@ -685,24 +686,28 @@ export default{
     }
     button{
         position: absolute;
-        bottom: 130px;
+        bottom: 120px;
         left: 150px;
     }
     .cost{
         position: absolute;
-        bottom: 80px;
+        bottom: 70px;
         left: 120px;
         font-size: 20px;
         font-weight: 500;
     }
     .twd{
         position: absolute;
-        bottom: 80px;
+        bottom: 70px;
         right: 150px;
         font-size: 24px;
         font-weight: 600;
     }
-        
+    .bottom{
+        scale: 0.85;
+        position: absolute;
+        bottom: -550px;
+    }
 }
 .footer{
     width: 100%;
