@@ -6,6 +6,7 @@ export default {
 
         }
     },
+    // 建立呼叫資料的方法
     created() {
         this.fetchfunction();
     },
@@ -13,6 +14,8 @@ export default {
         change1() {
             this.changeVal1 = !this.changeVal1
         },
+        // 若未呼叫，oil.vue的圖表偶爾會跑不出來
+        // 原因可能是切換分頁時，oil.vue只會跑該檔案的資料不會再跑components所串接的vue檔
         fetchfunction() {
             // 資料匯入產生新陣列
             fetch("./src/components/巧/巧匯入檔.json")
@@ -21,9 +24,10 @@ export default {
                     console.log(data)
                     let oilData = data.油價
                     let textName = [];
+                    // 只取92.95.98.柴油的值
                     textName.push(oilData[0].Column2, oilData[0].Column3, oilData[0].Column4, oilData[0].Column6)
 
-
+                    // 因數列37之後是備註文字，圖表x軸會吃到空值，使圖表變長但沒有值，所以只取值到37內
                     let yearPoint = [];
                     for (let i = 2; i < 37; i++) {
                         yearPoint.push(oilData[i].Column11)
