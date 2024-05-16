@@ -6,15 +6,16 @@ export default {
             
         }
     },
+    //解決切換分頁跑不出來的問題
+    created(){
+        this.hahaha()
+    },
     methods: {
         change1() {
             this.changeVal1 = !this.changeVal1
-        }
-    }
-
-}
-
-// 資料匯入產生新陣列
+        },
+        hahaha(){
+    // 資料匯入產生新陣列
 let arr = []
 fetch("./src/components/巧/巧匯入檔.json")
     .then(res => res.json())
@@ -120,6 +121,13 @@ fetch("./src/components/巧/巧匯入檔.json")
             }
         });
     });
+}
+    }
+
+}
+
+
+
 </script>
 
 <template>
