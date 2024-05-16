@@ -274,11 +274,12 @@ export default{
 
 .areaOne{
     width: 100%;
-    height: 70dvh;
+    height: 60dvh;
+    margin-top: 150px;
     background-image: url("./imgs/green-energy-final.png");
     background-position: center;
-    background-size: cover;
-    overflow: hidden;
+    background-size: 100%;
+    // overflow: hidden;
     position: relative;
     animation: fadeIn linear;
     animation-timeline: view();
@@ -316,9 +317,7 @@ export default{
         bottom: 100px;
         left: 100px;
     }
-    .animationArea{
-        position: relative;
-        transition: 1s linear;
+    
         .cloud{
             position: absolute;
             left:320px;
@@ -332,23 +331,23 @@ export default{
             animation: cloudMove 20s linear infinite;
         }
         .sun{
-            scale:1.1;
+            scale:1.5;
             position: absolute;
-            right: 6%;
-            top: 95px;
+            right: 6.75%;
+            top: 15.5%;
             animation: sunshine 10s linear infinite;
         }
         .wind{
             position: absolute;
-            right: 9.9%;
-            top: 185px;
-            scale: 1.1;
+            right: 10.8%;
+            bottom: 44%;
+            scale: 1.5;
             animation: windMove 13s linear infinite;
         }
         .windSlow{
             position: absolute;
-            right: 6.6%;
-            top: 220px;
+            right: 7.55%;
+            bottom: 35%;
             animation: windMove 19s linear infinite;
         }
         .rain{
@@ -361,7 +360,7 @@ export default{
             animation-delay: 2s;
             
         }
-    }
+    
 }
 @keyframes cloudMove{
     50%{
@@ -372,14 +371,17 @@ export default{
     }
 }
 @keyframes sunshine{
+    0%{
+        scale: 1.6;
+    }
     25%{
-        scale: 1.25;
+        scale: 2;
     }
     50%{
-        scale:1;
+        scale:1.6;
     }
     75%{
-        scale: 1.25;
+        scale: 2;
     }
     100%{
         transform: rotate(90deg);
@@ -704,14 +706,16 @@ export default{
         font-weight: 600;
     }
     .bottom{
-        scale: 0.85;
+        // scale: 0.85;
         position: absolute;
-        bottom: -550px;
+        bottom: -450px;
     }
 }
-.footer{
-    width: 100%;
-    height: 35dvh;
-    background: #48725C;
-}
+// .footer{
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     height: 35dvh;
+//     background: #48725C;
+// }
 </style>

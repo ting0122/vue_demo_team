@@ -16,7 +16,7 @@ export default{
     <div class="calculator">
         <calculator />
     </div>
-    
+
 </template>
 
 <style scoped lang="scss">

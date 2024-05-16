@@ -38,25 +38,25 @@ export default {
             <div class="space"></div>
             <div class="itemIcon" id="elecIcon" @mouseenter="oilHovered = true" @mouseleave="oilHovered = false">
                 <div class="eleText" :class="{ 'flipped': oilHovered }">
-                    <h3><a href="/ElectricCost">{{ eleItemName }}</a></h3>
+                    <h1><a href="/ElectricCost">{{ eleItemName }}</a></h1>
                     <img :src="imageEle" class="bgeleImg">
                 </div>
             </div>
             <div class="itemIcon" id="oilIcon" @mouseenter="eleHovered = true" @mouseleave="eleHovered = false">
                 <div class="oilText" :class="{ 'flipped': eleHovered }">
-                    <h3><a href="/oilInformation">{{ oilItemName }}</a></h3>
+                    <h1><a href="/oilInformation">{{ oilItemName }}</a></h1>
                     <img :src="imageOil" class="bgoilImg">
                 </div>
             </div>
             <div class="itemIcon" id="staIcon" @mouseenter="staHovered = true" @mouseleave="staHovered = false">
                 <div class="staText" :class="{ 'flipped': staHovered }">
-                    <h3><a href="#">{{ staItemName }}</a></h3>
+                    <h1><a href="#">{{ staItemName }}</a></h1>
                     <img :src="imageSta" class="bgstaImg">
                 </div>
             </div>
             <div class="itemIcon" id="gasIcon" @mouseenter="gasHovered = true" @mouseleave="gasHovered = false">
                 <div class="gasText" :class="{ 'flipped': gasHovered }">
-                    <h3><a href="#">{{ gasItemName }}</a></h3>
+                    <h1><a href="#">{{ gasItemName }}</a></h1>
                     <img :src="imageGas" class="bggasImg">
                 </div>
             </div>
@@ -137,7 +137,7 @@ export default {
         }
 
         .itemIcon {
-            width: 220px;
+            width: 250px;
             height: 6dvh;
             text-align: center;
         }
@@ -262,11 +262,11 @@ export default {
     }
 
     50% {
-        transform: translate3d(725px, 0, 0);
+        transform: translate3d(900px, 0, 0);
     }
 
     100% {
-        transform: translate3d(1500px, 0, 0);
+        transform: translate3d(1900px, 0, 0);
     }
 
 }
@@ -286,7 +286,7 @@ export default {
 .gasText {
     position: absolute;
     display: flex;
-    width: 220px;
+    width: 250px;
     transform: scale(1, 1);
     color: white;
     text-align: center;
@@ -301,17 +301,17 @@ export default {
 
 .bgoilImg,
 .bgeleImg {
-    width: 50px;
+    width: 3.5dvw;
     height: 6dvh;
 }
 
 .bggasImg {
-    width: 40px;
+    width: 3dvw;
     height: 6dvh;
 }
 
 .bgstaImg {
-    width: 35px;
+    width: 2.5dvw;
     height: 6dvh;
     margin-left: 7px
 }
