@@ -1,26 +1,88 @@
-<script setup>
+<script>
+export default {
+  data() {
+    return {
+      p1: null,
+      p2: null,
+      q1: null,
+      q2: null,
+      citys: [],
+      pitys: [], //pitys是指power那個json，歷年價格的檔案
+    }
+  },
+  computed: {
+    elasticity: function () {
+      if (this.p1 === null || this.p2 === null || this.q1 === null || this.q2 === null) 
+      {
+        return null; // 如果有任何一個數值為null，則彈性無法計算
+      }
+      const elasticityValue = Math.abs(((this.q2 - this.q1) / this.q1) / ((this.p2 - this.p1) / this.p1));
+      if (elasticityValue === 1) {
+        return "1(此時可以達到利潤極大化)";
+      } else {
+        return elasticityValue;
+      }
+    }
+    },
 
-
-
-import {onMounted,ref} from "vue";  //建立響應式狀態taipei一開始是空值  //onMounted組件掛載(靜態畫面)之後會呼叫
-let citys = ref(null);
-//組件掛載完成後，呼叫fetch串接後端的資料
-onMounted(async function(){  //onMounted代表掛載完成後要做的事情
-let response=await fetch("./public/power.json");
-let data = await response.json();
-citys.value = data.filter(city => city.縣市名稱 === '苗栗縣'); // 先過濾出基隆市的資料
-});
-
+ 
+  mounted() {
+    fetch("./public/gas_demand.json")  //fetch 操作處於 mounted 鉤子中
+      .then(res => res.json())
+      .then(data => {
+        this.citys = data.filter(city => city.縣市名稱 === '苗栗縣');
+      })
+    fetch("./public/power.json")
+      .then(res => res.json())
+      .then(data => {
+        this.pitys = data.filter(pity => pity.縣市名稱 === '苗栗縣');
+    });
+  }
+};
+  
+  
 </script>
 
 <template>
 <div class="headline">苗栗縣瓦斯價格列表</div>
- <div v-if="citys===null">資料載入中</div> <!--設置空值，如果資料還未取得，就在畫面顯示 "資料載入中"  -->
+ <div v-if="pitys===null">資料載入中</div> <!--設置空值，如果資料還未取得，就在畫面顯示 "資料載入中"  -->
  <div class="list" v-else>
-    <div class="product" v-for="city in citys" :key="city.縣市名稱">
-      <div class="縣市名稱" v-if="city.縣市名稱 === '苗栗縣'">{{ city.縣市名稱 }}</div>
-      <div class="查報均價" v-if="city.縣市名稱 === '苗栗縣'">查報均價: {{ city.查報均價 }}元/20公斤</div>
-      <div class="查報日期" v-if="city.縣市名稱 === '苗栗縣'">查報日期: {{ city.查報日期 }}</div>
+    <div class="product" v-for="pity in pitys" :key="pity.縣市名稱">
+      <div class="縣市名稱" v-if="pity.縣市名稱 === '苗栗縣'">{{ pity.縣市名稱 }}</div>
+      <div class="查報均價" v-if="pity.縣市名稱 === '苗栗縣'">查報均價: {{ pity.查報均價 }}元/20公斤</div>
+      <div class="查報日期" v-if="pity.縣市名稱 === '苗栗縣'">查報日期: {{ pity.查報日期 }}</div>
+    </div>
+  </div>
+ <div class="First">
+    <div>
+      <label for="p1">價格P1:</label>
+      <input type="text" v-model="p1">
+    </div>
+    <div>
+      <label for="p2">價格P2:</label>
+      <input type="text" v-model="p2">
+    </div>
+    <div>
+      <label for="q1">數量Q1:</label>
+      <input type="text" v-model="q1">
+    </div>
+    <div>
+      <label for="q2">數量Q2:</label>
+      <input type="text" v-model="q2">
+    </div>
+    <div> 彈性: {{ elasticity }}</div>
+
+</div>
+<div class="headline1">苗栗縣瓦斯使用量列表</div>
+<div class="container2">
+    <div class="list" v-if="this.citys === null">資料載入中</div>
+    <div class="list" v-else>
+      <div class="product" v-for="city in this.citys" :key="city.縣市名稱">
+        <div class="縣市名稱" v-if="city.縣市名稱 === '苗栗縣'">{{ city.縣市名稱 }}</div>
+        <div class="桶裝液化石油氣用量公噸" v-if="city.縣市名稱 === '苗栗縣'">桶裝液化石油氣用量公噸 {{ city.桶裝液化石油氣用量公噸 }}</div>
+        <div class="年度" v-if="city.縣市名稱 === '苗栗縣'">年度: {{ city.年度 }}</div>
+      </div>
+
     </div>
   </div>
   <img src="../assets/gaspic.jfif" alt="">
@@ -31,7 +93,7 @@ citys.value = data.filter(city => city.縣市名稱 === '苗栗縣'); // 先過�
 </template>
 
 
-<<style scoped>
+<style scoped>
 #firstArea {
   width: 100%;
   height: 50px;
@@ -47,12 +109,12 @@ h1{
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  right: 400px;
+  left: 85px;
   top: 733px;
 }
 
 .list {
-  width: 100dvw;
+  width: 50dvw;
   height: 500px;
   /* 捲軸容器的高度 */
   overflow-y: auto;
@@ -80,5 +142,36 @@ img {
   position: absolute;
   top: 1%;
   z-index: -1;
+}
+.First{
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  position: absolute;
+  right: 0%;
+  top:800px;
+  background-color:#c9d9cd ;
+}
+input{
+  margin: 10px;
+}
+.container2{
+  width: 50dvw;
+  height: 500px;
+  position: absolute;
+right: -17px;
+z-index: -1;
+top:800px;
+
+}
+.headline1{
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  right: 85px;
+  top: 733px;
+  z-index: 1;
+
+
 }
 </style>

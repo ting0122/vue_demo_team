@@ -31,11 +31,12 @@ export default{
         <RouterLink class="routerItem" to="/Tainan"> 台南市</RouterLink>
         <RouterLink class="routerItem" to="/Kaohsiung"> 高雄市</RouterLink>
         <RouterLink class="routerItem" to="/Pingtung"> 屏東縣</RouterLink>
-        <RouterLink class="routerItem" to="/Taitung"> 台東縣</RouterLink>
+        <RouterLink class="routerItem" to="/Taitung"> 臺東縣</RouterLink>
         <RouterLink class="routerItem" to="/Hualian"> 花蓮縣</RouterLink>
         <RouterLink class="routerItem" to="/Kinmen"> 金門縣</RouterLink>
         <RouterLink class="routerItem" to="/Lienchiang"> 連江縣</RouterLink>
         <RouterLink class="routerItem" to="/Penghu">澎湖縣</RouterLink>
+      
 
 
 
