@@ -155,7 +155,12 @@ const router = createRouter({
             component: () => import("../views/Lienchiang.vue") 
             },
       ]
-    }
+    },
+    {
+      path: '/TaiwanChargeMap',
+      name: 'TaiwanChargeMap',
+      component: () => import('../views/TaiwanChargeMap.vue')
+    },
   ]
 })
 

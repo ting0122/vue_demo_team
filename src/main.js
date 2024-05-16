@@ -1,3 +1,6 @@
+// import './assets/style.css'
+import './assets/main.css'
+
 
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -9,3 +12,7 @@ app.use(router)
 
 //掛載到html標籤底下
 app.mount('#app')
+
+
+
+

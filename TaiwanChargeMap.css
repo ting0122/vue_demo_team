@@ -1,0 +1,138 @@
+* {
+  /* 整頁套用字型 */
+  font-family: "Fjalla One";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.header {
+  height: 100%;
+  width: 100%;
+  position: relative; /* 设置相对定位，以便后续使用伪元素绝对定位 */
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: 0;
+  width: 450px; /* 设置边框宽度 */
+  height: 1035px;
+  background-color: #CCEE52; /* 设置边框颜色 */
+  opacity: 0.4; /* 设置边框的透明度 */
+} 
+
+
+.title_area {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #1E684F;
+  font-size: 25px;
+}
+
+hr {
+  width: 300px;
+  margin: 20px;
+  margin-left: 0;
+  border: none;
+  border-bottom: solid 2px #B99362;
+}
+
+h1,h2,h3 {
+  margin: 20px;
+  padding: 0;
+  color: #1E684F;
+}
+
+h2{
+  font-size: 30px;
+}
+
+h3{
+  font-size: 50px;
+}
+
+h1:hover{
+  scale: 1.2;
+  transition: 0.5s;
+  color: #1E4538;
+}
+
+h2:hover{
+  scale: 1.2;
+  transition: 0.5s;
+  color: #1E4538;
+}
+
+h3:hover{
+  scale: 1.4;
+  translate: 0 -5px;
+  transition: 0.5s;
+  color: #1E4538;
+}
+
+
+
+
+svg {
+  /* 台灣地圖svg size */
+  height: 100vh;
+  width: 150vh;
+}
+
+#svg1{
+  margin-top: 5px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%; /* 跟 video 一樣寬 */
+  height: 100%; /* 跟 video 一樣高 */
+  z-index: 1; /* 確保內容在 video 上方 */
+  border-right: 450px#D8FB5A;
+}
+.theVideo{
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: -78px;
+}
+
+video{
+  background-size: cover;
+  background-position:center;
+  width: 100%;
+  height: 100%;
+
+}
+
+path {
+  /* 台灣地圖svg的路徑 */
+  stroke: wheat;
+  fill: #1E684F; 
+  transition: 0.5s;
+  cursor: pointer;
+  position: relative;
+}
+path:hover {
+  /* 路徑互動 */
+  fill: #D8FB5A;
+  transform: translate(-5px, -5px);
+}
+
+
+#animationWindow {
+  width: 50%;
+  height: 50%;
+  cursor: pointer;
+  position: fixed;
+  z-index: 50;
+  right:-13%;
+  top: 50%;
+}
