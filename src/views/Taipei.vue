@@ -102,6 +102,7 @@ border-radius: 8px; will-change: transform;">
 <h1> LPG GAS </h1>
   </div>
 
+
 </template>
 
 
@@ -121,8 +122,8 @@ h1{
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  left: 85px;
-  top: 733px;
+  left: 30px;
+  top: 690px;
 }
 
 .list {
@@ -134,6 +135,7 @@ h1{
   line-height: 1.5rem;
   /*   增加行高 */
   background-color: #FFF7E6;
+z-index: -2;
 
 }
 
@@ -195,6 +197,11 @@ top:800px;
   /* justify-content: center; */
   align-items: center;
   opacity: 0.9;
+}
+.header {
+  width: 100dvw;
+  height: 20dvh;
+  background-color: #C9D9CD;
 }
 
 </style>

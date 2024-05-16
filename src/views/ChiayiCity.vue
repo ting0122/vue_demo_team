@@ -117,8 +117,8 @@ h1{
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  left: 85px;
-  top: 733px;
+  left: 30px;
+  top: 690px;
 }
 
 .list {
