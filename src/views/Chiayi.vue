@@ -11,19 +11,28 @@ export default {
     }
   },
   computed: {
-    elasticity: function () {
-      if (this.p1 === null || this.p2 === null || this.q1 === null || this.q2 === null) {
-        return null; // 如果有任何一個數值為null，則彈性無法計算
+    elasticity() {
+      // 檢查是否有任何一個數值為 null 或 0，則彈性無法計算
+      if (this.p1 === null || this.p2 === null || this.q1 === null || this.q2 === null || this.p1 === 0 || this.q1 === 0) {
+        return null;
       }
+
+      // 計算彈性值的公式
       const elasticityValue = Math.abs(((this.q2 - this.q1) / this.q1) / ((this.p2 - this.p1) / this.p1));
+
+      // 根據彈性值返回不同的結果
       if (elasticityValue === 1) {
-        return "1(此時可以達到利潤極大化)";
-      } else {
-        return elasticityValue;
+        return "1 (此時可以達到利潤極大化)";
+      } else if (elasticityValue === 0) {
+        return "0 (完全無彈性)";
+      } else if (elasticityValue > 0 && elasticityValue < 1) {
+        return `${elasticityValue.toFixed(2)} (缺乏彈性)`; // 用 toFixed(2) 限制小數點後兩位
+      } else if (elasticityValue > 1) {
+        return `${elasticityValue.toFixed(2)} (富有彈性)`; // 用 toFixed(2) 限制小數點後兩位
       }
+      return elasticityValue.toFixed(2); // 返回我的答案
     }
   },
-
 
  created() {
     fetch("/gas_demand.json")  //fetch 操作處於 mounted 鉤子中
@@ -45,7 +54,7 @@ export default {
 <template>
   <div class="content">
 
-    <div style="position: relative; width: 60%; height: 400px; padding-top: 100px;
+    <div style="position: relative; width: 50%; height: 550px; padding-top: 100px;
 padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
 border-radius: 8px; will-change: transform;">
       <iframe loading="lazy"
@@ -55,15 +64,15 @@ border-radius: 8px; will-change: transform;">
       </iframe>
     </div>
   </div>
- 
-
+  <div class="txt">
+      <div class="headline">嘉義縣瓦斯價格列表</div>
+    </div>
+    <div class="headline1">嘉義縣瓦斯使用量列表</div>
  <div class="bigdev">
  
   <div v-if="pitys === null">資料載入中</div> <!--設置空值，如果資料還未取得，就在畫面顯示 "資料載入中"  -->
   <div class="list" v-else>
-    <div class="txt">
-      <div class="headline">嘉義縣瓦斯價格列表</div>
-    </div>
+    
    
     <div class="product" v-for="pity in pitys" :key="pity.縣市名稱">
       <div class="縣市名稱" v-if="pity.縣市名稱 === '嘉義縣'">{{ pity.縣市名稱 }}</div>
@@ -71,7 +80,7 @@ border-radius: 8px; will-change: transform;">
       <div class="查報日期" v-if="pity.縣市名稱 === '嘉義縣'">查報日期: {{ pity.查報日期 }}</div>
     </div>
   </div>
-  <div class="headline1">嘉義縣瓦斯使用量列表</div>
+ 
   <div class="container2">
     <div class="list" v-if="this.citys === null">資料載入中</div>
     <div class="list" v-else>
@@ -131,7 +140,7 @@ h1 {
 .headline {
   font-size: 50px;
   font-weight: bold;
- 
+  margin-right: 800px;
 }
 
 .list {
@@ -169,10 +178,11 @@ align-items: center;
 
 img {
   width: 100dvw;
-  height: 792px;
+  height: 900px;
   position: absolute;
   top: 1%;
   z-index: -2;
+
 }
 
 .First {
@@ -183,6 +193,7 @@ img {
   right: 0%;
   top: 800px;
   background-color: #c9d9cd;
+  margin-top: 430px;
 }
 
 input {
@@ -200,12 +211,13 @@ input {
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  right: 75px;
-  top: 650px;
+  right: 180px;
+  top: 1155px;
 
 }
 
 .content {
+  margin-top: 100px;
   width: 100dvw;
   height: 100dvh;
   display: flex;

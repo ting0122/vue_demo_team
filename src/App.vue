@@ -8,6 +8,7 @@ import Header from './components/Header.vue'
     <!-- <RouterLink to="/">分頁</RouterLink> -->
     <RouterLink to="/ElectricCost">ElectricCost</RouterLink>
     <RouterLink to="/oilInformation">oilInformation</RouterLink>
+    <RouterLink to="/city">city</RouterLink>
   </header>
 
   <RouterView />
