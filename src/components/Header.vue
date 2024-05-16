@@ -13,7 +13,7 @@ export default{
 
 <template>
     <div class="headerArea">
-        <RouterLink class="routerItem" to="/"></RouterLink>
+        <!-- <RouterLink class="routerItem" to="/"></RouterLink>
         <RouterLink class="routerItem" to="/Taipei"> 臺北市</RouterLink>
         <RouterLink class="routerItem" to="/Jilong"> 基隆市</RouterLink>
         <RouterLink class="routerItem" to="/NewTaipei"> 新北市</RouterLink>
@@ -36,7 +36,8 @@ export default{
         <RouterLink class="routerItem" to="/Kinmen"> 金門縣</RouterLink>
         <RouterLink class="routerItem" to="/Lienchiang"> 連江縣</RouterLink>
         <RouterLink class="routerItem" to="/Penghu">澎湖縣</RouterLink>
-      
+    -->
+    <RouterLink class="routerItem" to="/city">city</RouterLink>
 
 
 

@@ -12,8 +12,7 @@ export default {
   },
   computed: {
     elasticity: function () {
-      if (this.p1 === null || this.p2 === null || this.q1 === null || this.q2 === null) 
-      {
+      if (this.p1 === null || this.p2 === null || this.q1 === null || this.q2 === null) {
         return null; // 如果有任何一個數值為null，則彈性無法計算
       }
       const elasticityValue = Math.abs(((this.q2 - this.q1) / this.q1) / ((this.p2 - this.p1) / this.p1));
@@ -23,49 +22,69 @@ export default {
         return elasticityValue;
       }
     }
-    },
+  },
 
- 
-  mounted() {
-    fetch("./public/gas_demand.json")  //fetch 操作處於 mounted 鉤子中
+
+ created() {
+    fetch("/gas_demand.json")  //fetch 操作處於 mounted 鉤子中
       .then(res => res.json())
       .then(data => {
         this.citys = data.filter(city => city.縣市名稱 === '臺東縣');
       })
-    fetch("./public/power.json")
+    fetch("/power.json")
       .then(res => res.json())
       .then(data => {
         this.pitys = data.filter(pity => pity.縣市名稱 === '臺東縣');
-    });
+      });
   }
 };
-  
-  
+
+
 </script>
 
 <template>
   <div class="content">
 
-<div style="position: relative; width: 60%; height: 400px; padding-top: 100px;
+    <div style="position: relative; width: 60%; height: 400px; padding-top: 100px;
 padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
 border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy"
-    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGFCShWQmU&#x2F;tfoCfektmGSkB9Ly21MKyQ&#x2F;view?embed"
-    allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-</div>
-<div class="headline">臺東縣瓦斯價格列表</div>
- <div v-if="pitys===null">資料載入中</div> <!--設置空值，如果資料還未取得，就在畫面顯示 "資料載入中"  -->
- <div class="list" v-else>
+      <iframe loading="lazy"
+        style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+        src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGFCShWQmU&#x2F;tfoCfektmGSkB9Ly21MKyQ&#x2F;view?embed"
+        allowfullscreen="allowfullscreen" allow="fullscreen">
+      </iframe>
+    </div>
+  </div>
+ 
+
+ <div class="bigdev">
+ 
+  <div v-if="pitys === null">資料載入中</div> <!--設置空值，如果資料還未取得，就在畫面顯示 "資料載入中"  -->
+  <div class="list" v-else>
+    <div class="txt">
+      <div class="headline">臺東縣瓦斯價格列表</div>
+    </div>
+   
     <div class="product" v-for="pity in pitys" :key="pity.縣市名稱">
       <div class="縣市名稱" v-if="pity.縣市名稱 === '臺東縣'">{{ pity.縣市名稱 }}</div>
       <div class="查報均價" v-if="pity.縣市名稱 === '臺東縣'">查報均價: {{ pity.查報均價 }}元/20公斤</div>
       <div class="查報日期" v-if="pity.縣市名稱 === '臺東縣'">查報日期: {{ pity.查報日期 }}</div>
     </div>
   </div>
- <div class="First">
+  <div class="headline1">臺東縣瓦斯使用量列表</div>
+  <div class="container2">
+    <div class="list" v-if="this.citys === null">資料載入中</div>
+    <div class="list" v-else>
+      <div class="product" v-for="city in this.citys" :key="city.縣市名稱">
+        <div class="縣市名稱" v-if="city.縣市名稱 === '臺東縣'">{{ city.縣市名稱 }}</div>
+        <div class="桶裝液化石油氣用量公噸" v-if="city.縣市名稱 === '臺東縣'">桶裝液化石油氣用量公噸 {{ city.桶裝液化石油氣用量公噸 }}</div>
+        <div class="年度" v-if="city.縣市名稱 === '臺東縣'">年度: {{ city.年度 }}</div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+  <div class="First">
     <div>
       <label for="p1">價格P1:</label>
       <input type="text" v-model="p1">
@@ -84,23 +103,14 @@ border-radius: 8px; will-change: transform;">
     </div>
     <div> 彈性: {{ elasticity }}</div>
 
-</div>
-<div class="headline1">臺東縣瓦斯使用量列表</div>
-<div class="container2">
-    <div class="list" v-if="this.citys === null">資料載入中</div>
-    <div class="list" v-else>
-      <div class="product" v-for="city in this.citys" :key="city.縣市名稱">
-        <div class="縣市名稱" v-if="city.縣市名稱 === '臺東縣'">{{ city.縣市名稱 }}</div>
-        <div class="桶裝液化石油氣用量公噸" v-if="city.縣市名稱 === '臺東縣'">桶裝液化石油氣用量公噸 {{ city.桶裝液化石油氣用量公噸 }}</div>
-        <div class="年度" v-if="city.縣市名稱 === '臺東縣'">年度: {{ city.年度 }}</div>
-      </div>
-
-    </div>
   </div>
+
+  
   <img src="../assets/gaspic.jfif" alt="">
   <div id="firstArea">
-<h1> LPG GAS </h1>
+    <h1> LPG GAS </h1>
   </div>
+
 
 </template>
 
@@ -111,18 +121,17 @@ border-radius: 8px; will-change: transform;">
   height: 50px;
   background-color: #c9d9cd;
 }
-h1{
+
+h1 {
   color: white;
   display: flex;
-  justify-content: center;     
+  justify-content: center;
 }
 
 .headline {
   font-size: 50px;
   font-weight: bold;
-  position: absolute;
-  left: 30px;
-  top: 690px;
+ 
 }
 
 .list {
@@ -135,8 +144,18 @@ h1{
   /*   增加行高 */
   background-color: #FFF7E6;
 
+  /* display: flex;
+  flex-direction: column;
+  justify-self: start; */
 }
+.txt{
+  width: 100%;
+  height: 80px;
 
+  display: flex;
+justify-content: center;
+align-items: center;
+}
 
 .product {
   padding: 15px 0;
@@ -153,39 +172,39 @@ img {
   height: 792px;
   position: absolute;
   top: 1%;
-  z-index: -1;
+  z-index: -2;
 }
-.First{
+
+.First {
   width: 300px;
   height: 200px;
   border-radius: 10px;
   position: absolute;
   right: 0%;
-  top:800px;
-  background-color:#c9d9cd ;
+  top: 800px;
+  background-color: #c9d9cd;
 }
-input{
+
+input {
   margin: 10px;
 }
-.container2{
+
+.container2 {
   width: 50dvw;
   height: 500px;
-  position: absolute;
-right: -17px;
-z-index: -1;
-top:800px;
+  z-index: -1;
 
 }
-.headline1{
+
+.headline1 {
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  right: 85px;
-  top: 733px;
-  z-index: 1;
-
+  right: 75px;
+  top: 650px;
 
 }
+
 .content {
   width: 100dvw;
   height: 100dvh;
@@ -195,5 +214,17 @@ top:800px;
   /* justify-content: center; */
   align-items: center;
   opacity: 0.9;
+}
+
+.header {
+  width: 100dvw;
+  height: 20dvh;
+  background-color: #C9D9CD;
+}
+.bigdev{
+  width: 100dvw;
+  height: 500px;
+  display: flex;
+
 }
 </style>
