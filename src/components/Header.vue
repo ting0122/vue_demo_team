@@ -14,7 +14,7 @@ export default{
 <template>
 
     <!-- <RouterLink class="routerItem" to="/">Home</RouterLink> -->
-    <RouterLink class="routerItem" to="/ElectricCost">電價</RouterLink>
+    <!-- <RouterLink class="routerItem" to="/ElectricCost">電價</RouterLink> -->
 
 
 </template>

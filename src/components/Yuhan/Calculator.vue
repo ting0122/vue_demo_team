@@ -106,18 +106,17 @@ export default{
         },
     },
     computed: {
-    redBar: function() {
-        let percent = this.sPeak*100/100;
-        return `linear-gradient(to right,rgb(209, 75, 75) `+ percent +`%,rgb(88, 198, 88) `+ 0 +`%)`;
+    redBar() {
+        return `linear-gradient(to right,#f9748f,#cfc7f8 `+ this.sPeak +`%, #84fab0 100%)`;
         },
-    redBar2: function() {
-        let percent = this.notSPeak*100/100;
-        return `linear-gradient(to right,rgb(209, 75, 75) `+ percent +`%,rgb(88, 198, 88) `+ 0 +`%)`;
+    redBar2() {
+        return `linear-gradient(to right,#f9748f,#cfc7f8 `+ this.notSPeak +`%,#84fab0 100%)`;
         },
     }
 
     }
 </script>
+
 
 <template>
     <div class="areaOne">
@@ -144,7 +143,7 @@ export default{
         <!-- 二段時間電價區域 -->
         <div class="calculator divleft">
             <div class="title left">
-                <h2>二段式時間電價<br>毎期電費計算</h2>
+                <h2>二段式時間電價<br>毎期電費試算</h2>
             </div>
             <p class="note">1.毎戶毎月基本電費75元<br>
             2.用電度數可於電費帳單中取得
@@ -170,20 +169,20 @@ export default{
                     <h3>尖峰時段</h3>
                     <div class="peakDisplay"></div>
                     <div class="icon">
-                        <span>平日<img src="./day-icon.svg" alt="">09:00</span>
-                        <span><img src="./night-icon.svg" alt="" class="night">24:00</span> 
+                        <span><img src="./imgs/day-icon.svg" alt="">平日09:00</span>
+                        <span>24:00<img src="./imgs/night-icon.svg" alt="" class="night"></span> 
                     </div>
                     <h3>離峰時段</h3>
                     <div class="peakDisplay isGreen"></div>
                     <div class="icon">
-                        <span>平日<img src="./night-icon.svg" alt="">00:00</span>
-                        <span><img src="./day-icon.svg" alt="">09:00</span>
+                        <span><img src="./imgs/night-icon.svg" alt="">平日00:00</span>
+                        <span>09:00<img src="./imgs/day-icon.svg" alt=""></span>
                     </div>
                     <div class="peakDisplay isGreen"></div>
                     <span>六日00:00-24:00</span>
                 </div>
                 <div class="inputArea">
-                    <h3>請輸入尖峰離峰時段使用比例(毎週)</h3>
+                    <h3 class="txt">請輸入尖峰離峰時段使用比例(毎週)</h3>
                     <input type="range" min="0" max="100" step="5" v-model="sPeak" name="hour" class="slider" :style="{background: redBar}">
                     <h3 class="percent"><span>{{ sPeak }}%</span><span>{{ sNotPeak }}%</span></h3>
                 </div>
@@ -216,7 +215,7 @@ export default{
                         <p>六日00:00-24:00</p>
                 </div>
                 <div class="inputArea">
-                    <h3>請輸入尖峰離峰時段使用比例(毎週)</h3>
+                    <h3 class="txt">請輸入尖峰離峰時段使用比例(毎週)</h3>
                     <input type="range" min="0" max="100" step="5" v-model="notSPeak" name="hour" class="slider" :style="{background: redBar2}">
                     <h3 class="percent"><span>{{ notSPeak }}%</span>
                     <span>{{ notSNotPeak }}%</span></h3>
@@ -226,10 +225,10 @@ export default{
             </div>
         </div>
             
-        <!-- 累進電量區域 -->
+        <!-- 累進電價區域 -->
         <div class="calculator backgroundDark divright">
             <div class="title right">
-                <h2>累進電量<br>毎期電費試算</h2>
+                <h2>累進電價<br>毎期電費試算</h2>
             </div>
             <p class="note">1.僅提供給表燈非營業用戶(家用)<br>
             2.概算電費金額僅供參考，實際電費金額需配合用電情形計算。<br>
@@ -257,8 +256,10 @@ export default{
                 <button type="submit" @click="notTimeTotal(notTimeDegree)" class="calculate">試算</button>
                 <span class="cost">本期電費約為</span><span class="twd">{{notT + '元'}}</span>
             </div>
+            <img class="bottom" src="./imgs/footerImg.png" alt="">
         </div>
     </div>
+    <div class="footer"></div>
 </template>
 
 <style scoped lang="scss">
@@ -279,6 +280,9 @@ export default{
     background-size: cover;
     overflow: hidden;
     position: relative;
+    animation: fadeIn linear;
+    animation-timeline: view();
+    animation-range: -50px 400px;
     .details{
         width: 30%;
         padding: 2%;
@@ -289,6 +293,7 @@ export default{
         opacity: 0.85;
         border-radius: 20px;
         box-shadow: 2px 2px 2px gray;
+        font-weight: 500;
     }
     button{
         margin-top: 5px;
@@ -394,16 +399,23 @@ export default{
         opacity: 0;
     }
 }
+@keyframes fadeIn{
+    from{scale: .85; opacity: 0;transform:translateX(-300px);}
+    to{scale: 1; opacity: 1;transform: translateX(0px)}
+}
 .areaTwo{
     width: 100%;
-    height: 150dvh;
+    height: 160dvh;
     display: flex;
     justify-content: space-evenly;
+    animation: fadeIn linear;
+    animation-timeline: view();
+    animation-range: -50px 500px;
 }
 .title{
     width: 215px;
     height: 120px;
-    background: #2F5954;
+    background: #48725C;
     color: white;
     text-align: center;
     padding-top: 25px;
@@ -442,8 +454,9 @@ export default{
 .calculator{
     scale: 0.95;
     width: 600px;
-    height: 900px;
-    border: 2px solid #2F5954;
+    height: 950px;
+    // border: 2px solid #2F5954;
+    box-shadow: 0 0 5px #D8FB5A;
     border-radius: 50px;
     position: relative;
     display: flex;
@@ -454,6 +467,7 @@ export default{
         width: 300px;
         height: 60px;
         font-size: 12px;
+        font-weight: 500;
         position: absolute;
         right:15px;
         top: 30px;
@@ -469,7 +483,7 @@ export default{
             width: 180px;
             height: 50px;
             border-radius: 15px;
-            margin: 0 15px;
+            margin: 0 10px;
             padding-top: 10px;
             background: #fff;
             cursor: pointer;
@@ -499,7 +513,7 @@ export default{
         position: absolute;
         top: 220px;
         font-size: 18px;
-        padding: 20px 40px;
+        padding: 15px 50px;
         border-radius: 25px;
         background: #C9D9CD;
         box-shadow: 2px 2px 3px #bbbbbb;
@@ -525,15 +539,18 @@ export default{
         align-items: center;
         .peakArea{
             height: auto;
-            width: 100%;
+            width: 90%;
             padding: 25px 40px;
             border-radius: 40px;
             position: relative;
+            img{
+                width: 30px;
+            }
             .percentDisplay{
                 position: absolute;
                 right: 45px;
                 bottom: 25px;
-                font-size: 20px
+                font-size: 18px
             }
             h3{
                 margin-top: 10px;
@@ -541,18 +558,21 @@ export default{
             
             //時段顯示條
             .peakDisplay{
-                height: 12px;
-                width: inherit;
+                height: 10px;
+                width: 100%;
                 margin-top: 5px;
-                background-color: rgb(209, 75, 75);
+                
+                // background-color: rgb(226, 108, 108);
+                background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
                 border-radius: 50px;
             }
             .isGreen{
-                background-color: rgb(88, 198, 88);
+                // background-color: rgb(115, 213, 115);
+                background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
             }
             .isShort{
                 width: 40%;
-                margin-left: 40px;
+                margin-left: 35px;
                 display: inline-block;
             }
             .icon{
@@ -563,10 +583,14 @@ export default{
         .inputArea{
             width: 100%;
             height: auto;
+            margin-top: 15px;
             padding: 20px 40px;
             border-radius: 25px;
-            background: #C9D9CD;
-            box-shadow: 2px 2px 3px #bbbbbb;
+            background: #c9d9cd9a;
+            // box-shadow: 2px 2px 3px #bbbbbb;
+            .txt{
+                padding-bottom: 30px;
+            }
 
             // 滑桿
             .slider{
@@ -586,10 +610,10 @@ export default{
                     border-radius: 50%;
                     border: 2px solid  #707070;
                     background-color: #2F5954;
-                    box-shadow: 0px 1px 3px 0px #C9D9CD;
+                    box-shadow: 0px 1px 5px 0px #C9D9CD;
                     &:hover{
                         scale: 1.05;
-                        box-shadow: 0px 0px 2px 2px #C9D9CD;
+                        box-shadow: 0px 0px 5px 5px #C9D9CD;
                     }
                 }
             }
@@ -600,13 +624,14 @@ export default{
         }
         .cost{
             position: absolute;
-            bottom: -60px;
+            bottom: -50px;
             left: 120px;
             font-size: 20px;
+            font-weight: 500;
         }
         .twd{
             position: absolute;
-            bottom: -60px;
+            bottom: -50px;
             right: 150px;
             font-size: 24px;
             font-weight: 600;
@@ -642,7 +667,7 @@ export default{
     }
 }
 .backgroundDark{
-    height: 850px;
+    height: 800px;
     background: #C9D9CD;
     display: flex;
     justify-content: center;
@@ -661,21 +686,32 @@ export default{
     }
     button{
         position: absolute;
-        bottom: 200px;
+        bottom: 120px;
         left: 150px;
     }
     .cost{
-            position: absolute;
-            bottom: 120px;
-            left: 120px;
-            font-size: 20px;
-        }
-        .twd{
-            position: absolute;
-            bottom: 120px;
-            right: 150px;
-            font-size: 24px;
-            font-weight: 600;
-        }
+        position: absolute;
+        bottom: 70px;
+        left: 120px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .twd{
+        position: absolute;
+        bottom: 70px;
+        right: 150px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .bottom{
+        scale: 0.85;
+        position: absolute;
+        bottom: -550px;
+    }
+}
+.footer{
+    width: 100%;
+    height: 35dvh;
+    background: #48725C;
 }
 </style>

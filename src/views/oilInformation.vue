@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             oilItemName: '油 價 動 態',
-            eleItemName: '電 價 浮 動',
+            eleItemName: '電 價 幫 手',
             staItemName: '充電站資訊',
             gasItemName: '桶裝瓦斯價格',
             imageOil: './src/components/巧/巧gas1.png',
@@ -38,13 +38,13 @@ export default {
             <div class="space"></div>
             <div class="itemIcon" id="elecIcon" @mouseenter="oilHovered = true" @mouseleave="oilHovered = false">
                 <div class="eleText" :class="{ 'flipped': oilHovered }">
-                    <h3><a href="#">{{ eleItemName }}</a></h3>
+                    <h3><a href="/ElectricCost">{{ eleItemName }}</a></h3>
                     <img :src="imageEle" class="bgeleImg">
                 </div>
             </div>
             <div class="itemIcon" id="oilIcon" @mouseenter="eleHovered = true" @mouseleave="eleHovered = false">
                 <div class="oilText" :class="{ 'flipped': eleHovered }">
-                    <h3><a href="#">{{ oilItemName }}</a></h3>
+                    <h3><a href="/oilInformation">{{ oilItemName }}</a></h3>
                     <img :src="imageOil" class="bgoilImg">
                 </div>
             </div>
@@ -84,9 +84,9 @@ export default {
     </div>
     <div class="bgColor">
         <div class="content">
+
             <componentjhen />
             <div class="countArea">
-
             </div>
             <componentchiao />
             <div class="bottom">
@@ -95,6 +95,7 @@ export default {
                     <canvas id="myChart" @mouseenter="this.change1()"></canvas>
                 </div>
             </div>
+            <div class="footer"></div>
         </div>
     </div>
 
@@ -181,9 +182,6 @@ export default {
                 margin: 2.5% 7%;
             }
         }
-
-
-
     }
 
     .greenArea {
@@ -212,6 +210,8 @@ export default {
         border-radius: 15px;
         margin: 0 auto;
         padding: 3% 3%;
+        position: relative;
+        z-index: 1;
 
         h2 {
             color: #294744;
@@ -238,9 +238,22 @@ export default {
                 border: 3pt solid #CCEC60;
                 padding: 20px 15px;
                 border-radius: 10px;
+                z-index: 3;
+                position: relative;
+            }
+    }
+    .footer{
+                width: 100%;
+                height: 36dvh;
+                background-color: #294744;
+                position: absolute;
+                bottom: 0%;
+                z-index: 2;
+                bottom: 0%;
+                left: 0%;
+
             }
         }
-    }
 }
 
 @keyframes goRun {
@@ -287,16 +300,19 @@ export default {
 }
 
 .bgoilImg,
-.bgeleImg,
-
-.bggasImg {
+.bgeleImg {
     width: 50px;
     height: 6dvh;
 }
 
-.bgstaImg{
+.bggasImg {
     width: 40px;
     height: 6dvh;
-    margin-left: 5px
+}
+
+.bgstaImg {
+    width: 35px;
+    height: 6dvh;
+    margin-left: 7px
 }
 </style>

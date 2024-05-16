@@ -3,129 +3,130 @@
 export default {
     data() {
         return {
-            
+
         }
     },
-    //解決切換分頁跑不出來的問題
-    created(){
-        this.hahaha()
+    // 建立呼叫資料的方法
+    created() {
+        this.fetchfunction();
     },
     methods: {
         change1() {
             this.changeVal1 = !this.changeVal1
         },
-        hahaha(){
-    // 資料匯入產生新陣列
-let arr = []
-fetch("./src/components/巧/巧匯入檔.json")
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        let oilData = data.油價
-        let textName = [];
-        textName.push(oilData[0].Column2, oilData[0].Column3, oilData[0].Column4, oilData[0].Column6)
+        // 若未呼叫，oil.vue的圖表偶爾會跑不出來
+        // 原因可能是切換分頁時，oil.vue只會跑該檔案的資料不會再跑components所串接的vue檔
+        fetchfunction() {
+            // 資料匯入產生新陣列
+            fetch("./src/components/巧/巧匯入檔.json")
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    let oilData = data.油價
+                    let textName = [];
+                    // 只取92.95.98.柴油的值
+                    textName.push(oilData[0].Column2, oilData[0].Column3, oilData[0].Column4, oilData[0].Column6)
+
+                    // 因數列37之後是備註文字，圖表x軸會吃到空值，使圖表變長但沒有值，所以只取值到37內
+                    let yearPoint = [];
+                    for (let i = 2; i < 37; i++) {
+                        yearPoint.push(oilData[i].Column11)
+                    }
+                    console.log(yearPoint)
+
+                    let oil92EachPoint = [];
+                    for (let i = 2; i < 37; i++) {
+                        oil92EachPoint.push(oilData[i].Column2)
+                    }
+                    oil92EachPoint.splice(31, 1)
+                    console.log(oil92EachPoint)
+
+                    let oil95EachPoint = [];
+                    for (let i = 2; i < 37; i++) {
+                        oil95EachPoint.push(oilData[i].Column3)
+                    }
+                    oil95EachPoint.splice(31, 1)
+                    console.log(oil95EachPoint)
+
+                    let oil98EachPoint = [];
+                    for (let i = 2; i < 37; i++) {
+                        oil98EachPoint.push(oilData[i].Column4)
+                    }
+                    oil98EachPoint.splice(31, 1)
+                    console.log(oil98EachPoint)
+
+                    let oildieselEachPoint = [];
+                    for (let i = 2; i < 37; i++) {
+                        oildieselEachPoint.push(oilData[i].Column6)
+                    }
+                    oildieselEachPoint.splice(31, 1)
+                    console.log(oildieselEachPoint)
 
 
-        let yearPoint = [];
-        for (let i = 2; i < 37; i++) {
-            yearPoint.push(oilData[i].Column11)
+                    const chartElement = document.getElementById('myChart');
+                    const chartImg = {
+                        // X軸 年分
+                        labels: yearPoint,
+                        // Y軸
+                        datasets: [
+                            {
+                                label: '92無鉛汽油',
+                                data: oil92EachPoint,
+                                // 點的顏色
+                                backgroundColor: "rgba(192, 159, 109, 1)",
+                                // hover點的顏色
+                                hoverBackgroundColor: "rgba(192, 159, 109, 1)",
+                                // 線的顏色
+                                borderColor: "rgba(192, 159, 109, 0.5)",
+                                // hover點的框線色
+                                hoverBorderColor: "rgba(192, 159, 109, 1)",
+                                // hover點的大小
+                                hoverBorderWidth: 7,
+                                type: 'line',
+                            },
+                            {
+                                label: '95無鉛汽油',
+                                data: oil95EachPoint,
+                                backgroundColor: "rgba(72, 114, 92, 1)",
+                                hoverBackgroundColor: "rgba(72, 114, 92, 1)",
+                                borderColor: "rgba(72, 114, 92, 0.5)",
+                                hoverBorderColor: "rgba(72, 114, 92, 1)",
+                                hoverBorderWidth: 7,
+                                type: 'line',
+                            },
+                            {
+                                label: '98無鉛汽油',
+                                data: oil98EachPoint,
+                                backgroundColor: "rgba(134, 120, 53, 1)",
+                                hoverBackgroundColor: "rgba(134, 120, 53, 1)",
+                                borderColor: "rgba(134, 120, 53, 0.5)",
+                                hoverBorderColor: "rgba(134, 120, 53, 1)",
+                                hoverBorderWidth: 7,
+                                type: 'line',
+                            },
+                            {
+                                label: '超 級 柴 油',
+                                data: oildieselEachPoint,
+                                backgroundColor: "rgba(47, 89, 84, 1)",
+                                hoverBackgroundColor: "rgba(47, 89, 84, 1)",
+                                borderColor: "rgba(47, 89, 84, 0.5)",
+                                hoverBorderColor: "rgba(47, 89, 84, 1)",
+                                hoverBorderWidth: 7,
+                                type: 'line',
+                            }
+                        ]
+                    };
+                    const chart = new Chart(chartElement, {
+                        type: 'line',
+                        data: chartImg,
+                        options: {
+                        }
+                    });
+                });
         }
-        console.log(yearPoint)
-
-        let oil92EachPoint = [];
-        for (let i = 2; i < 37; i++) {
-            oil92EachPoint.push(oilData[i].Column2)
-        }
-        oil92EachPoint.splice(31, 1)
-        console.log(oil92EachPoint)
-
-        let oil95EachPoint = [];
-        for (let i = 2; i < 37; i++) {
-            oil95EachPoint.push(oilData[i].Column3)
-        }
-        oil95EachPoint.splice(31, 1)
-        console.log(oil95EachPoint)
-
-        let oil98EachPoint = [];
-        for (let i = 2; i < 37; i++) {
-            oil98EachPoint.push(oilData[i].Column4)
-        }
-        oil98EachPoint.splice(31, 1)
-        console.log(oil98EachPoint)
-
-        let oildieselEachPoint = [];
-        for (let i = 2; i < 37; i++) {
-            oildieselEachPoint.push(oilData[i].Column6)
-        }
-        oildieselEachPoint.splice(31, 1)
-        console.log(oildieselEachPoint)
-
-
-        const chartElement = document.getElementById('myChart');
-        const chartImg = {
-            // X軸 年分
-            labels: yearPoint,
-            // Y軸
-            datasets: [
-                {
-                    label: '92無鉛汽油',
-                    data: oil92EachPoint,
-                    // 點的顏色
-                    backgroundColor: "rgba(192, 159, 109, 1)",
-                    // hover點的顏色
-                    hoverBackgroundColor: "rgba(192, 159, 109, 1)",
-                    // 線的顏色
-                    borderColor: "rgba(192, 159, 109, 0.5)",
-                    // hover點的框線色
-                    hoverBorderColor: "rgba(192, 159, 109, 1)",
-                    // hover點的大小
-                    hoverBorderWidth: 7,
-                    type: 'line',
-                },
-                {
-                    label: '95無鉛汽油',
-                    data: oil95EachPoint,
-                    backgroundColor: "rgba(72, 114, 92, 1)",
-                    hoverBackgroundColor: "rgba(72, 114, 92, 1)",
-                    borderColor: "rgba(72, 114, 92, 0.5)",
-                    hoverBorderColor: "rgba(72, 114, 92, 1)",
-                    hoverBorderWidth: 7,
-                    type: 'line',
-                },
-                {
-                    label: '98無鉛汽油',
-                    data: oil98EachPoint,
-                    backgroundColor: "rgba(134, 120, 53, 1)",
-                    hoverBackgroundColor: "rgba(134, 120, 53, 1)",
-                    borderColor: "rgba(134, 120, 53, 0.5)",
-                    hoverBorderColor: "rgba(134, 120, 53, 1)",
-                    hoverBorderWidth: 7,
-                    type: 'line',
-                },
-                {
-                    label: '超 級 柴 油',
-                    data: oildieselEachPoint,
-                    backgroundColor: "rgba(47, 89, 84, 1)",
-                    hoverBackgroundColor: "rgba(47, 89, 84, 1)",
-                    borderColor: "rgba(47, 89, 84, 0.5)",
-                    hoverBorderColor: "rgba(47, 89, 84, 1)",
-                    hoverBorderWidth: 7,
-                    type: 'line',
-                }
-            ]
-        };
-        const chart = new Chart(chartElement, {
-            type: 'line',
-            data: chartImg,
-            options: {
-            }
-        });
-    });
-}
     }
 
 }
-
 
 
 </script>
@@ -140,8 +141,8 @@ fetch("./src/components/巧/巧匯入檔.json")
             </div>
             <div class= "itemIcon" id="oilcon">
                 <img src="./gas-pump.png" style="width: 50px;height: 50px;"> -->
-                <!-- <h2><a href="#">油 價 動 態</a></h2> -->
-            <!-- </div id = onhoveroil>
+    <!-- <h2><a href="#">油 價 動 態</a></h2> -->
+    <!-- </div id = onhoveroil>
             <div class="itemIcon chargingStationIcon">
                 <h2><a href="#">充 電 站</a></h2>
             </div>
@@ -343,5 +344,4 @@ fetch("./src/components/巧/巧匯入檔.json")
 //         transform: translate3d(1500px, 0, 0);
 //     }
 
-// }
-</style>
+// }</style>
