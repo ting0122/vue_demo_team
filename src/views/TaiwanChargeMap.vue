@@ -1,5 +1,6 @@
 <script>
 import lottie from 'lottie-web'; // 請確保已安裝 lottie-web
+import ElectricCost from './ElectricCost.vue';
 
 
 export default {
@@ -179,7 +180,7 @@ export default {
             </video>
         </div>
         <!-- partial:index.partial.html -->
-        <div id="app">
+        <div id="svg1">
             <div class="title_area">
                 <!-- <br />強行換行<br /> -->
                 <h1>台灣 Taiwan<br />充電站地圖<br /></h1>
@@ -516,4 +517,6 @@ export default {
 
 
 
-<style scoped></style>
+<style scoped>
+
+</style>

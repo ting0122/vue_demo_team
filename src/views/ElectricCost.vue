@@ -10,6 +10,7 @@ export default{
 </script>
 
 <template>
+    
     <div class="chart">
         <eletricalPrice />
     </div>

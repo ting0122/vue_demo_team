@@ -7,6 +7,7 @@
 }
 
 
+
 .header {
   height: 100%;
   width: 100%;
@@ -14,13 +15,14 @@
   overflow: hidden;
 }
 
-.header::after {
+header::after {
   content: '';
   position: absolute;
-  top: 0;
+  top: 18px;
   right: 0;
   bottom: 0;
   width: 450px; /* 设置边框宽度 */
+  height: 710px;
   background-color: #CCEE52; /* 设置边框颜色 */
   opacity: 0.4; /* 设置边框的透明度 */
 } 
@@ -84,9 +86,10 @@ svg {
   width: 150vh;
 }
 
-#app{
+#svg1{
+  margin-top: 5px;
   position: absolute;
-  top: 0;
+  top: 5px;
   left: 0;
   width: 100%; /* 跟 video 一樣寬 */
   height: 100%; /* 跟 video 一樣高 */
@@ -97,22 +100,25 @@ svg {
   opacity: 0.5;
   height: 100%;
   width: 100%;
+  position: relative;
+  top: -43px;
 }
 
-.video{
+video{
   background-size: cover;
   background-position:center;
   width: 100%;
-  height: 100dvh;
+  height: 100%;
 
 }
 
 path {
   /* 台灣地圖svg的路徑 */
   stroke: wheat;
-  fill: #1E684F;; */
+  fill: #1E684F; 
   transition: 0.5s;
   cursor: pointer;
+  position: relative;
 }
 path:hover {
   /* 路徑互動 */
@@ -128,5 +134,5 @@ path:hover {
   position: fixed;
   z-index: 50;
   right:-10%;
-  top: 55%;
+  top: 50%;
 }
