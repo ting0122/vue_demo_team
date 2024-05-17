@@ -161,6 +161,12 @@ const router = createRouter({
       name: 'TaiwanChargeMap',
       component: () => import('../views/TaiwanChargeMap.vue')
     },
+    {
+      path: '/Header',
+      name: 'Header',
+      component: () => import('../components/Header.vue')
+    },
+  
   ]
 })
 

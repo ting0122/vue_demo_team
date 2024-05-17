@@ -1,16 +1,21 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
+import Header from "../components/Header.vue"
 //options API 寫法
 export default{
     //components =>放能在<template>中當標籤使用的元件或方法
     components:{
         RouterLink,
-        RouterView
+        RouterView,
+        Header
     }
 }
 </script>
 
 <template>
+    <div>
+        <Header/>
+    </div>
         <RouterLink  class="one" to="/city/Taipei">台北市</RouterLink>
         <RouterLink  class="one"to="/city/Jilong"> 基隆市</RouterLink>
         <RouterLink  class="one"to="/city/NewTaipei"> 新北市</RouterLink>

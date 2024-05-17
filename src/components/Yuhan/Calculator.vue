@@ -288,7 +288,7 @@ export default{
         width: 30%;
         padding: 2%;
         position: absolute;
-        left: 220px;
+        left: 320px;
         top: 140px;
         background: #fff;
         opacity: 0.85;
@@ -407,7 +407,7 @@ export default{
 }
 .areaTwo{
     width: 100%;
-    height: 160dvh;
+    height: 130dvh;
     display: flex;
     justify-content: space-evenly;
     animation: fadeIn linear;
@@ -420,10 +420,12 @@ export default{
     background: #48725C;
     color: white;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 20px;
     border-radius: 45px;
     box-shadow: 5px 5px 5px grey;
     z-index: 1;
+    font-size: large;
+    font-weight: 800;
 }
 .left{
     position: absolute;
@@ -437,15 +439,15 @@ export default{
 }
 .large{
     position: absolute;
-    left: 100px;
+    left: 200px;
     top: 15px;
     width: 250px;
     height: 100px;
-    padding-top: 20px;
+    padding-top: 15px;
     border-radius: 40px;
     span{
         color: #D8FB5A;
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 

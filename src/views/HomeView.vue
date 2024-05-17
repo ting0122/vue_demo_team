@@ -1,8 +1,8 @@
 <script>
 import { RouterLink } from 'vue-router';
-
+import Header from "../components/Header.vue"
 export default{
-  name: "Home",
+  // name: "Home",
   data(){
     return{
       imgArr : [
@@ -12,24 +12,30 @@ export default{
           {image:"src/assets/ting0122/gas.png", alt:"gas"}
       ]
     }
+  },
+  components:{
+    Header
   }
 }
 
 </script>
 
 <template>
+  <div>
+    <Header/>
 
-<!--Navigation Bar-->
-<nav><!--Logo image and words-->
+  </div>
+<!-- Navigation Bar
+<nav>Logo image and words
     <i class="fa-solid fa-tree"></i>
     <div class="logo"><RouterLink to="/">ENERGYMAP</RouterLink></div>
-  <ul><!--page links-->
+  <ul>page links
     <li><RouterLink to="/TaiwanChargeMap">充電站位置</RouterLink></li>
     <li><RouterLink to="/oilInformation">油價資訊</RouterLink></li>
     <li><RouterLink to="/ElectricCost">電價資訊</RouterLink></li>
     <li><RouterLink to="/city">天然氣資訊</RouterLink></li>
   </ul>
-</nav>
+</nav> -->
 
 <!--left_Text-->
 <div class="left_text">
@@ -95,47 +101,47 @@ body{
   background-color: #F8EEDA;
 }
 
-//Navigation Bar , logo's left is 100px
-nav{
-  position: relative;
-  width: 100%;
-  height: 100px;
-  background-color: #F8EEDA;
-  //remove underline of links
-  a{
-  color: black;
-  text-decoration: none; /* 移除下划线 */
-  }
+// //Navigation Bar , logo's left is 100px
+// nav{
+//   position: relative;
+//   width: 100%;
+//   height: 100px;
+//   background-color: #F8EEDA;
+//   //remove underline of links
+//   a{
+//   color: black;
+//   text-decoration: none; /* 移除下划线 */
+//   }
 
-  i{
-    position: absolute;
-    top: 33px;
-    left: 100px;
-    font-size: 30px;
-  }
-  .logo{
-    position: absolute;
-    top: 33px;
-    left: 140px;
-    font-size: 30px;
-    color: black;
-    .router-link-exact-active, .router-link-active, .router-link {
-      color: black;
-      text-decoration: none;
-    }
-  }
-  ul{
-    padding: 0 200px;
-    margin-left: 700px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 30px;
-  }
-}
+//   i{
+//     position: absolute;
+//     top: 33px;
+//     left: 100px;
+//     font-size: 30px;
+//   }
+//   .logo{
+//     position: absolute;
+//     top: 33px;
+//     left: 140px;
+//     font-size: 30px;
+//     color: black;
+//     .router-link-exact-active, .router-link-active, .router-link {
+//       color: black;
+//       text-decoration: none;
+//     }
+//   }
+//   ul{
+//     padding: 0 200px;
+//     margin-left: 700px;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: row;
+//     list-style-type: none;
+//     justify-content: space-between;
+//     align-items: center;
+//     font-size: 30px;
+//   }
+// }
 
 //Left_text
 .left_text{
