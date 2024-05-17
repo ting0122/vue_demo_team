@@ -146,12 +146,12 @@ body{
 //Left_text
 .left_text{
   position: absolute;
-  top: 150px;
-  left: 100px;
+  top: 110px;
+  left: 135px;
   width: 430px;
   height: 500px;
   h1{
-    font-size: 70px;
+    font-size: 54px;
   }
   p{
     padding-top: 20px;

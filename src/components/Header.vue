@@ -20,7 +20,7 @@ export default{
     <li><RouterLink to="/ElectricCost">電價幫手</RouterLink></li>
     <li><RouterLink to="/oilInformation">油價動態</RouterLink></li>
     <li><RouterLink to="/TaiwanChargeMap">充電站資訊</RouterLink></li>
-    <li><RouterLink to="/city">桶裝瓦斯價格</RouterLink></li>
+    <li><RouterLink to="/city/Taipei">桶裝瓦斯價格</RouterLink></li>
   </ul>
 </nav>
 

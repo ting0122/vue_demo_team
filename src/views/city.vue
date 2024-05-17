@@ -38,8 +38,8 @@ export default{
         <RouterLink  class="one"to="/city/Kinmen"> 金門縣</RouterLink>
         <RouterLink  class="one"to="/city/Lienchiang"> 連江縣</RouterLink>
         <RouterLink  class="one"to="/city/Penghu">澎湖縣</RouterLink>
-   
 <RouterView />
+
 </template>
 <style scoped>
 .one{
