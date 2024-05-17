@@ -24,10 +24,10 @@ export default{
     <i class="fa-solid fa-tree"></i>
     <div class="logo"><RouterLink to="/">ENERGYMAP</RouterLink></div>
   <ul><!--page links-->
-    <li><RouterLink to="/">充電站位置</RouterLink></li>
+    <li><RouterLink to="/TaiwanChargeMap">充電站位置</RouterLink></li>
     <li><RouterLink to="/oilInformation">油價資訊</RouterLink></li>
     <li><RouterLink to="/ElectricCost">電價資訊</RouterLink></li>
-    <li><RouterLink to="/">天然氣資訊</RouterLink></li>
+    <li><RouterLink to="/city">天然氣資訊</RouterLink></li>
   </ul>
 </nav>
 

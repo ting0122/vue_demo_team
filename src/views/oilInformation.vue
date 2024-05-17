@@ -50,13 +50,13 @@ export default {
             </div>
             <div class="itemIcon" id="staIcon" @mouseenter="staHovered = true" @mouseleave="staHovered = false">
                 <div class="staText" :class="{ 'flipped': staHovered }">
-                    <h1><a href="#">{{ staItemName }}</a></h1>
+                    <h1><a href="/TaiwanChargeMap">{{ staItemName }}</a></h1>
                     <img :src="imageSta" class="bgstaImg">
                 </div>
             </div>
             <div class="itemIcon" id="gasIcon" @mouseenter="gasHovered = true" @mouseleave="gasHovered = false">
                 <div class="gasText" :class="{ 'flipped': gasHovered }">
-                    <h1><a href="#">{{ gasItemName }}</a></h1>
+                    <h1><a href="/city">{{ gasItemName }}</a></h1>
                     <img :src="imageGas" class="bggasImg">
                 </div>
             </div>
@@ -110,7 +110,7 @@ export default {
         width: 120px;
         height: 95px;
         position: absolute;
-        top: 3%;
+        top: 15%;
         left: 5%;
         z-index: 1;
         animation: goRun 12s;

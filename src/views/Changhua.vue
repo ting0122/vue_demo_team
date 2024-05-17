@@ -178,7 +178,7 @@ align-items: center;
 
 img {
   width: 100dvw;
-  height: 900px;
+  height: 1100px;
   position: absolute;
   top: 1%;
   z-index: -2;
@@ -212,7 +212,7 @@ input {
   font-weight: bold;
   position: absolute;
   right: 180px;
-  top: 1155px;
+  top: 1135px;
 
 }
 
